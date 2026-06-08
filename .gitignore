@@ -18,9 +18,13 @@ Thumbs.db
 *.swp
 .vscode/
 .idea/
+.*~
 
 # 大きい元データ（Git LFS を使う場合は下行をコメントアウト）
 *.xlsm
 *.xlsx
 *.dispog
 *.dwg
+
+# 開発中
+synrad3d_wall.py
