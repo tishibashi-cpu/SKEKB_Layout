@@ -1,6 +1,6 @@
 # SKEKB Layout — AutoCAD スクリプト生成ツール (Python版)
 
-円形加速器 SuperKEKB のマグネット・ビームパイプ（ダクト）配置を
+SuperKEKBメインリングのマグネット・ビームパイプ（ダクト）配置を
 AutoCAD 上に展開するための、旧 Excel/VBA システムの Python 移植版です。
 
 ---
@@ -73,6 +73,7 @@ skekb_layout/
 * xlsm から対応表を再生成する場合のみ `pip install openpyxl oletools`
 
 AutoCAD は別途必要です（生成した `.scr` を AutoCAD で読み込みます）。
+AutoCAD 2027 for Mac と AutoCAD 2026 (Windows) で動作検証済み（前者の方が処理が早かったです）。
 
 ---
 
