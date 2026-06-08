@@ -1,0 +1,97 @@
+{
+  "_comment": "SKEKB Layout 設定ファイル。VBAに埋め込まれていた定数をここに集約しました。",
+  "coordinate": {
+    "_comment": "dispog座標[m] -> AutoCAD[mm] 変換係数。VBA: X = OGx * -1000",
+    "scale_mm_per_m": -1000.0
+  },
+  "geometry": {
+    "_comment": "角度計算と注記位置のパラメータ",
+    "deg_conversion_pi": 3.1415,
+    "label_offset_ratio": 0.004,
+    "ring_circumference_m": 3016.315,
+    "octant_count": 8
+  },
+  "text": {
+    "magnet_name_height": 200.0
+  },
+  "autocad": {
+    "point_mode": 64,
+    "point_size": 100,
+    "_insert_comment": "ブロック挿入。尺度と回転を『点を打つ前』に先付けで指定する確実な形式: <ブロック> _S <尺度> _R <回転角> <座標>。座標が最後なので、点の確定後に余計なプロンプトが出ず、トークンがはみ出さない。尺度は XYZ 一律の1値。",
+    "insert_command": "_-INSERT",
+    "insert_scale": "1"
+  },
+  "HER": {
+    "layers": {
+      "base": "herbase",
+      "base_color": 4,
+      "magnet_name": "hermagnetname",
+      "magnet_name_color": 243,
+      "magnet": "hermagnet",
+      "magnet_color": 233,
+      "monitor": "hermonitor",
+      "duct": "herduct",
+      "duct_color": 7
+    },
+    "element_suffix": "E",
+    "label_offset": {
+      "_comment": "X<0→内(0.996), X>=0→外(1.004)",
+      "neg_x": 0.996,
+      "pos_x": 1.004
+    },
+    "exclude_d_prefix": false,
+    "sk_zero_length_exception": false,
+    "qc_sample": {
+      "QC1": [
+        20,
+        270
+      ],
+      "QC2": [
+        20,
+        200
+      ]
+    }
+  },
+  "LER": {
+    "layers": {
+      "base": "lerbase",
+      "base_color": 4,
+      "magnet_name": "lermagnetname",
+      "magnet_name_color": 200,
+      "magnet": "lermagnet",
+      "magnet_color": 6,
+      "monitor": "lermonitor",
+      "duct": "lerduct",
+      "duct_color": 7
+    },
+    "element_suffix": "P",
+    "label_offset": {
+      "_comment": "X<0→外(1.008), X>=0→内(0.991)",
+      "neg_x": 1.008,
+      "pos_x": 0.991
+    },
+    "exclude_d_prefix": true,
+    "sk_zero_length_exception": true,
+    "qc_sample": {
+      "QC1": [
+        20,
+        180
+      ],
+      "QC2": [
+        20,
+        130
+      ]
+    }
+  },
+  "clear": {
+    "_comment": "スクリプト実行前のクリア処理。対象リング(her*/ler*)と下記の共通レイヤをアンロックし、それ以外を全ロックしてから ERASE ALL する(ロック層の図形は消えない)。Ctrl+A+Del 相当。",
+    "unlock_common": [
+      "0",
+      "1",
+      "Base",
+      "Chamber",
+      "Defpoint",
+      "Dim"
+    ]
+  }
+}

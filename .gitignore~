@@ -1,0 +1,25 @@
+# 生成物（dispog から作り直せるので追跡しない）
+*.scr
+sample_output/*.xlsx
+out/
+outputs/
+/mnt/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS / エディタ
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# 大きい元データ（Git LFS を使う場合は下行をコメントアウト）
+*.xlsm
+*.xlsx
+*.dispog

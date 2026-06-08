@@ -1,0 +1,2261 @@
+{
+  "QKALE": [
+    "D-QKALE",
+    "DQCSLaE"
+  ],
+  "QLC2LE": [
+    "D-QLC2LE"
+  ],
+  "BLC1LE": [
+    "D-BLC1LE"
+  ],
+  "QLC3LE": [
+    "D-QLC3LE"
+  ],
+  "QLC4LE": [
+    "DQTtp2175uE",
+    "DSTt1150fE",
+    "PMD01H5_1150aE",
+    "DSTts1120gE",
+    "DTTig1156aE"
+  ],
+  "QLC5LE": [
+    "DQTti2150dE",
+    "DSTts1120aE"
+  ],
+  "QLC7LE": [
+    "DQTt2774uE",
+    "DSTti1694aE"
+  ],
+  "QLY1LE.1": [
+    "DQTt1500uE"
+  ],
+  "QLY2LE.1": [
+    "DQTt1680dE",
+    "DSTt1500aE",
+    "PMD01H4_1500aE",
+    "DSTtir1913aE"
+  ],
+  "BLY1LE.1": [
+    "DBTt4456aE"
+  ],
+  "QLY3LE": [
+    "DQTt1504uE"
+  ],
+  "BLY1LE.2": [
+    "DBTt4456aE"
+  ],
+  "QLY2LE.2": [
+    "DQTt1800uE"
+  ],
+  "QLY1LE.2": [
+    "DQTt1500dE",
+    "DSTti1793aE",
+    "PMD01H3_1500aE",
+    "DSTt1500gE"
+  ],
+  "QLB1LE": [
+    "DQTt2170dE"
+  ],
+  "QLB2LE": [
+    "DQTt1760dE",
+    "DSTtir2376aE"
+  ],
+  "BLB1LE": [
+    "DBTt4456gE",
+    "DSTt1177aE",
+    "PMD01V1_1177aE"
+  ],
+  "QLB3LE": [
+    "DQTt2370uE"
+  ],
+  "QLB4LE": [
+    "DQT2300uE",
+    "DST1500aE",
+    "PMD01H2_1500aE",
+    "DSTi2300aE",
+    "DST0555aE",
+    "DSTts1120hE"
+  ],
+  "QLX1LE.1": [
+    "DQT1820dE",
+    "DSTirg1843aE"
+  ],
+  "BLX2LE.1": [
+    "DBT4456fE"
+  ],
+  "QLX2LE": [
+    "DQT1104uE"
+  ],
+  "BLX2LE.2": [
+    "DBT4456fE"
+  ],
+  "QLX1LE.2": [
+    "DQTz1780uE"
+  ],
+  "QLA2LE": [
+    "DQT2423dE",
+    "DSTig1800aE"
+  ],
+  "QLA3LE": [
+    "DQT1780uE",
+    "DST1500fE",
+    "PMD01H1_1500aE",
+    "DSTi1800aE"
+  ],
+  "QLA4LE": [
+    "DQT1800dE",
+    "DTTir1152aE",
+    "DSTs1120gE"
+  ],
+  "BLA2LE": [
+    "DBT6406fE"
+  ],
+  "QLA5LE": [
+    "DQT2400uE"
+  ],
+  "QLA6LE": [
+    "DQT2400uE",
+    "DSTi2400aE",
+    "DST2533aE",
+    "DSTi2400fE"
+  ],
+  "QLA7LE": [
+    "DQT2140dE",
+    "DSTi2447aE"
+  ],
+  "BLA4LE.1": [
+    "DBT6406hE"
+  ],
+  "QLA8LE": [
+    "DQT1441uE"
+  ],
+  "BLA4LE.2": [
+    "DBT6406hE"
+  ],
+  "QLA9LE": [
+    "DQT2140uE"
+  ],
+  "QLA10LE": [
+    "DQT2140dE",
+    "DSTir1652aE"
+  ],
+  "QF4E.1": [
+    "DQ3309aE",
+    "DTTig1574fE"
+  ],
+  "QD3E.1": [
+    "DQ3815aE"
+  ],
+  "B2E.4": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.1": [
+    "DQ2570aE"
+  ],
+  "QD1E.1": [
+    "DQ2910aE",
+    "DS1000aE"
+  ],
+  "QF2E.2": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.5": [
+    "DB6348aE"
+  ],
+  "QD3E.2": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.2": [
+    "DQ3309bE"
+  ],
+  "QEAE.3": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.3": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.6": [
+    "DB6348aE"
+  ],
+  "QF6E.2": [
+    "DQ1500aE"
+  ],
+  "B2E.7": [
+    "DB6348aE"
+  ],
+  "QD5E.4": [
+    "DQ2318bE"
+  ],
+  "QEAE.4": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.3": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.3": [
+    "DQ3815aE"
+  ],
+  "B2E.8": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.3": [
+    "DQ2570aE"
+  ],
+  "QD1E.2": [
+    "DQ2910aE",
+    "DS0890aE"
+  ],
+  "QF2E.4": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.9": [
+    "DB6348aE"
+  ],
+  "QD3E.4": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.4": [
+    "DQ3309bE"
+  ],
+  "QEAE.5": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.5": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.10": [
+    "DB6348aE"
+  ],
+  "QF6E.3": [
+    "DQ1500aE"
+  ],
+  "B2E.11": [
+    "DB6348aE"
+  ],
+  "QD5E.6": [
+    "DQ2318bE"
+  ],
+  "QEAE.6": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.5": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.5": [
+    "DQ3815aE"
+  ],
+  "B2E.12": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.5": [
+    "DQ2570aE"
+  ],
+  "QD1E.3": [
+    "DQ2910aE",
+    "DS1000aE"
+  ],
+  "QF2E.6": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.13": [
+    "DB6348aE"
+  ],
+  "QT1TNE.1": [
+    "DQ3815bE",
+    "DS0908cE"
+  ],
+  "QT2TNE.1": [
+    "DQ3710aE"
+  ],
+  "QTATNE.1": [
+    "DQ2395aE",
+    "DS0569aE"
+  ],
+  "QT3TNE.1": [
+    "DQ2309aE",
+    "DS1664aE"
+  ],
+  "B2E.14": [
+    "DB6348aE",
+    "DS0693aE"
+  ],
+  "QT4TNE.1": [
+    "DQ2503aE"
+  ],
+  "QTBTNE.1": [
+    "DSAk1039aE",
+    "DQAk2164dE",
+    "DSAik1039bE"
+  ],
+  "QT5TNE": [
+    "DQ2710bE"
+  ],
+  "QTBTNE.2": [
+    "DSAik1039aE",
+    "DQAk2164uE",
+    "DSAk1039bE"
+  ],
+  "QT4TNE.2": [
+    "DQ2503bE"
+  ],
+  "B2E.15": [
+    "DB6348aE"
+  ],
+  "QT3TNE.2": [
+    "DQ2309bE",
+    "DS0693bE"
+  ],
+  "QTATNE.2": [
+    "DQ2395bE",
+    "DMK_D12V4",
+    "PMD12V4_1500aE"
+  ],
+  "QT2TNE.2": [
+    "DQ3710bE",
+    "DS0569bE"
+  ],
+  "QT1TNE.2": [
+    "DQ3815aE"
+  ],
+  "B2E.16": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.7": [
+    "DQ2570aE"
+  ],
+  "QD1E.4": [
+    "DQ2910aE",
+    "DS0890aE"
+  ],
+  "QF2E.8": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.17": [
+    "DB6348aE"
+  ],
+  "QD3E.6": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.6": [
+    "DQ3309bE"
+  ],
+  "QEAE.7": [
+    "DQ2710aE",
+    "DMK_D12H4",
+    "PMD12H4_1500aE"
+  ],
+  "QD5E.7": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.18": [
+    "DB6348aE"
+  ],
+  "QF6E.4": [
+    "DQ1500aE"
+  ],
+  "B2E.19": [
+    "DB6348aE"
+  ],
+  "QD5E.8": [
+    "DQ2318bE"
+  ],
+  "QEAE.8": [
+    "DQM2710bE",
+    "DMK_D12V3",
+    "PMD12V3_1500aE"
+  ],
+  "QF4E.7": [
+    "DQ3309aE",
+    "DMK_D12H3",
+    "PMD12H3_1500aE"
+  ],
+  "QD3E.7": [
+    "DQ3815aE"
+  ],
+  "B2E.20": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.9": [
+    "DQ2570aE"
+  ],
+  "QD1E.5": [
+    "DQ2910aE",
+    "DS1000aE"
+  ],
+  "QF2E.10": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.21": [
+    "DB6348aE"
+  ],
+  "QD3E.8": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.8": [
+    "DQ3309bE"
+  ],
+  "QEAE.9": [
+    "DQ2710aE",
+    "DMK_D12H2",
+    "PMD12H2_1500aE"
+  ],
+  "QD5E.9": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.22": [
+    "DB6348aE"
+  ],
+  "QF6E.5": [
+    "DQ1500aE"
+  ],
+  "B2E.23": [
+    "DB6348aE"
+  ],
+  "QD5E.10": [
+    "DQ2318bE"
+  ],
+  "QEAE.10": [
+    "DQM2710bE",
+    "DMK_D12V2",
+    "PMD12V2_1500aE"
+  ],
+  "QF4E.9": [
+    "DQ3309aE",
+    "DMK_D12H1",
+    "PMD12H1_1500aE"
+  ],
+  "QD3E.9": [
+    "DQ3815aE"
+  ],
+  "B2E.24": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.11": [
+    "DQ2570aE"
+  ],
+  "QD1E.6": [
+    "DQ2910aE",
+    "DS0890aE"
+  ],
+  "QF2E.12": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.25": [
+    "DB6348aE"
+  ],
+  "QD3E.10": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.10": [
+    "DQ3309bE"
+  ],
+  "QEAE.11": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.11": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.26": [
+    "DB6348aE"
+  ],
+  "QF6E.6": [
+    "DQ1500aE"
+  ],
+  "B2E.27": [
+    "DB6348aE"
+  ],
+  "QD5E.12": [
+    "DQ2318bE"
+  ],
+  "QEAE.12": [
+    "DQM2710bE",
+    "DMK_D12V1",
+    "PMD12V1_1500aE"
+  ],
+  "QS4NE.1": [
+    "DQKQS4FRE",
+    "DSKQS4FRE"
+  ],
+  "QSBNE.1": [
+    "DQKQSBN1E"
+  ],
+  "QS3NE.1": [
+    "DQKQS3N1E",
+    "DSKQSBN1E"
+  ],
+  "B2E.28": [
+    "DB6348aE"
+  ],
+  "QS2NE.1": [
+    "DQKQS2N2E"
+  ],
+  "BSWNRE": [
+    "DBSWNLE"
+  ],
+  "QR7NE.1": [
+    "DQKQR7N1E"
+  ],
+  "QR6NE.1": [
+    "DQKQR6O1E",
+    "DSKQR6N1E"
+  ],
+  "QR5NE.1": [
+    "DQKQRN2E",
+    "DSKQR5N11E",
+    "DSKQR5N12E",
+    "DSKQR5N13E"
+  ],
+  "QR4NE.1": [
+    "DQKQRN1E",
+    "DSKQRO11E",
+    "DSKQRO12E"
+  ],
+  "QR3NE.1": [
+    "DQKQRN3E",
+    "DSKQRN21E",
+    "DSKQRN23E"
+  ],
+  "QR2NE.1": [
+    "DQKQRN1E",
+    "DSNscc6150aP"
+  ],
+  "QDRNE.1": [
+    "DQKQRN1E",
+    "DSNscc6150aP"
+  ],
+  "QFRNE.1": [
+    "DQKQRN1E",
+    "DSNscc6150aP"
+  ],
+  "QDRNE.2": [
+    "DQKQRN1E",
+    "DSNscc6150aP"
+  ],
+  "QFRNE.2": [
+    "DQKQRN1E",
+    "DSKQRO31E",
+    "DSKQRN24E"
+  ],
+  "QDRNE.3": [
+    "DQKQRN1E",
+    "DSKQRO11E",
+    "DSKQRO12E"
+  ],
+  "QFRNE.3": [
+    "DQKQRN1E",
+    "DSKQRO11E",
+    "DSKQRO14E"
+  ],
+  "QDRNE.4": [
+    "DQKQRN1E",
+    "DSKQRO11E",
+    "DSKQRO14E"
+  ],
+  "QFRNE.4": [
+    "DQKQRN1E",
+    "DSKQRO11E",
+    "DSKQRO12E"
+  ],
+  "QDRNE.5": [
+    "DQKQRN3E",
+    "DSKQRN21E",
+    "DSKQRN23E"
+  ],
+  "QFRNE.5": [
+    "DQKQRN1E",
+    "DSNscc6150aP"
+  ],
+  "QDRNE.6": [
+    "DQKQRN1E",
+    "DSNscc6150aP"
+  ],
+  "QR2NE.2": [
+    "DQKQRN1E",
+    "DSNscc6150aP"
+  ],
+  "QR3NE.2": [
+    "DQKQRN1E",
+    "DSNscc6150aP"
+  ],
+  "QR4NE.2": [
+    "DQKQRN1E",
+    "DSKQRO31E",
+    "DSKQRN24E"
+  ],
+  "QR5NE.2": [
+    "DQKQRN1E",
+    "DSKzQRO11E",
+    "DSKQRO12E"
+  ],
+  "QR6NE.2": [
+    "DQKQR6O2E",
+    "DSKQR6N21E",
+    "DSKQR6N22E",
+    "DSKQR6N23E"
+  ],
+  "QR7NE.2": [
+    "DQKQR7N2E",
+    "DSKQR7N2E"
+  ],
+  "BSWNLE": [
+    "DBSWNLE"
+  ],
+  "QS2NE.2": [
+    "DQKQS2N2E"
+  ],
+  "B2E.29": [
+    "DB6348aE"
+  ],
+  "QS3NE.2": [
+    "DQKQS3N2E"
+  ],
+  "QSBNE.2": [
+    "DQKQSBN2E",
+    "DSKQSBN2E"
+  ],
+  "QS4NE.2": [
+    "DQKQS4N2E"
+  ],
+  "QEAE.13": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.13": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.30": [
+    "DB6348aE"
+  ],
+  "QF6E.7": [
+    "DQ1500aE"
+  ],
+  "B2E.31": [
+    "DB6348aE"
+  ],
+  "QD5E.14": [
+    "DQ2318bE"
+  ],
+  "QEAE.14": [
+    "DQM2710bE",
+    "DMK_D09V4",
+    "PMD09V4_1500aE"
+  ],
+  "QF4E.11": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.11": [
+    "DQ3815aE"
+  ],
+  "B2E.32": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.13": [
+    "DQ2570aE"
+  ],
+  "QD1E.7": [
+    "DQ2910aE",
+    "DS1000aE"
+  ],
+  "QF2E.14": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.33": [
+    "DB6348aE"
+  ],
+  "QD3E.12": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.12": [
+    "DQ3309bE"
+  ],
+  "QEAE.15": [
+    "DQ2710aE",
+    "DMK_D09H4",
+    "PMD09H4_1500aE"
+  ],
+  "QD5E.15": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.34": [
+    "DB6348aE"
+  ],
+  "QF6E.8": [
+    "DQ1500aE"
+  ],
+  "B2E.35": [
+    "DB6348aE"
+  ],
+  "QD5E.16": [
+    "DQ2318bE"
+  ],
+  "QEAE.16": [
+    "DQM2710bE",
+    "DMK_D09V3",
+    "PMD09V3_1500aE"
+  ],
+  "QF4E.13": [
+    "DQ3309aE",
+    "DMK_D09H3",
+    "PMD09H3_1500aE"
+  ],
+  "QD3E.13": [
+    "DQ3815aE"
+  ],
+  "B2E.36": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.15": [
+    "DQ2570aE"
+  ],
+  "QD1E.8": [
+    "DQ2910aE",
+    "DS0890aE"
+  ],
+  "QF2E.16": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.37": [
+    "DB6348aE"
+  ],
+  "QD3E.14": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.14": [
+    "DQ3309bE"
+  ],
+  "QEAE.17": [
+    "DQ2710aE",
+    "DMK_D09H2",
+    "PMD09H2_1500aE"
+  ],
+  "QD5E.17": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.38": [
+    "DB6348aE"
+  ],
+  "QF6E.9": [
+    "DQ1500aE"
+  ],
+  "B2E.39": [
+    "DB6348aE"
+  ],
+  "QD5E.18": [
+    "DQ2318bE"
+  ],
+  "QEAE.18": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.15": [
+    "DQ3309aE",
+    "DMK_D09H1",
+    "PMD09H1_1500aE"
+  ],
+  "QD3E.15": [
+    "DQ3815aE"
+  ],
+  "B2E.40": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.17": [
+    "DQ2570aE"
+  ],
+  "QD1E.9": [
+    "DQ2910aE",
+    "DS1000aE"
+  ],
+  "QF2E.18": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.41": [
+    "DB6348aE"
+  ],
+  "QT1NFE.1": [
+    "DQ3815bE",
+    "DS0908cE"
+  ],
+  "QT2NFE.1": [
+    "DQ3710aE"
+  ],
+  "QTANFE.1": [
+    "DQ2395aE",
+    "DS0569aE"
+  ],
+  "QT3NFE.1": [
+    "DQ2309aE",
+    "DS1664aE"
+  ],
+  "B2E.42": [
+    "DB6348aE",
+    "DS0693aE"
+  ],
+  "QT4NFE.1": [
+    "DQ2503aE"
+  ],
+  "QTBNFE.1": [
+    "DSAk1039aE",
+    "DQAk2164dE",
+    "DSAik1039bE"
+  ],
+  "QT5NFE": [
+    "DQ2710bE"
+  ],
+  "QTBNFE.2": [
+    "DSAik1039aE",
+    "DQAk2164uE",
+    "DSAk1039bE"
+  ],
+  "QT4NFE.2": [
+    "DQ2503bE"
+  ],
+  "B2E.43": [
+    "DB6348aE"
+  ],
+  "QT3NFE.2": [
+    "DQ2309bE",
+    "DS0693bE"
+  ],
+  "QTANFE.2": [
+    "DQ2395bE",
+    "DMK_D09V2",
+    "PMD09V2_1500aE"
+  ],
+  "QT2NFE.2": [
+    "DQ3710bE",
+    "DS0569bE"
+  ],
+  "QT1NFE.2": [
+    "DQ3815aE"
+  ],
+  "B2E.44": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.19": [
+    "DQ2570aE"
+  ],
+  "QD1E.10": [
+    "DQ2910aE",
+    "DS1000aE"
+  ],
+  "QF2E.20": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.45": [
+    "DB6348aE"
+  ],
+  "QD3E.16": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.16": [
+    "DQ3309bE"
+  ],
+  "QEAE.19": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.19": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.46": [
+    "DB6348aE"
+  ],
+  "QF6E.10": [
+    "DQ1500aE"
+  ],
+  "B2E.47": [
+    "DB6348aE"
+  ],
+  "QD5E.20": [
+    "DQ2318bE"
+  ],
+  "QEAE.20": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.17": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.17": [
+    "DQ3815aE"
+  ],
+  "B2E.48": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.21": [
+    "DQ2570aE"
+  ],
+  "QD1E.11": [
+    "DQ2910aE",
+    "DS0890aE"
+  ],
+  "QF2E.22": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.49": [
+    "DB6348aE"
+  ],
+  "QD3E.18": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.18": [
+    "DQ3309bE"
+  ],
+  "QEAE.21": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.21": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.50": [
+    "DB6348aE"
+  ],
+  "QF6E.11": [
+    "DQ1500aE"
+  ],
+  "B2E.51": [
+    "DB6348aE"
+  ],
+  "QD5E.22": [
+    "DQ2318bE"
+  ],
+  "QEAE.22": [
+    "DQM2710bE",
+    "DMK_D09V1",
+    "PMD09V1_1500aE"
+  ],
+  "QF4E.19": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.19": [
+    "DQ3815aE"
+  ],
+  "B2E.52": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.23": [
+    "DQ2570aE"
+  ],
+  "QD1E.12": [
+    "DQ2910aE",
+    "DS1000aE"
+  ],
+  "QF2E.24": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.53": [
+    "DB6348aE"
+  ],
+  "QD3E.20": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.20": [
+    "DQ3309bE"
+  ],
+  "QEAE.23": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.23": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.54": [
+    "DB6348aE"
+  ],
+  "QF6E.12": [
+    "DQ1500aE"
+  ],
+  "B2E.55": [
+    "DB6348aE"
+  ],
+  "QD5E.24": [
+    "DQ2318bE"
+  ],
+  "QEAE.24": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QS4FRE": [
+    "DQKQS4FRE",
+    "DSKQS4FRE"
+  ],
+  "QSBFRE": [
+    "DQKQSBFRE"
+  ],
+  "QS3FRE": [
+    "DQKQS3FRE"
+  ],
+  "B2E.56": [
+    "DB6348aE"
+  ],
+  "QS2FRE": [
+    "DQKQS2N2E"
+  ],
+  "BSWFRE": [
+    "DBSWFRE"
+  ],
+  "QI7E": [
+    "DQKQI7E"
+  ],
+  "QI6E": [
+    "DQKQI6E",
+    "DSKQI6E"
+  ],
+  "QI5E": [
+    "DQKQI5E",
+    "DSKQI51E",
+    "DSKQI52aE",
+    "DSKQI52bE",
+    "DSKQI52cE",
+    "DSKQI52E"
+  ],
+  "QI4E": [
+    "DSF2734aE",
+    "DQFa1253dE",
+    "DSFa0130aE",
+    "DSFsbpm0130rE",
+    "DSFai4150aE"
+  ],
+  "QI3E": [
+    "DQKQI3E",
+    "DSKQI31E",
+    "DSKQI32E",
+    "DSFa0544aE",
+    "DSFSEPT3",
+    "DSFSEPT4"
+  ],
+  "QI2E": [
+    "DQKQI2E",
+    "DSKQI21E",
+    "DSFaig3753aE",
+    "DSFGVDUMMY120E"
+  ],
+  "QX7RE": [
+    "DQFa2400uE",
+    "DSFabt3202aE",
+    "DSKQX7E12E"
+  ],
+  "QX6RE": [
+    "DQF2910uE",
+    "DSFir4000aE",
+    "DTFa1252aE"
+  ],
+  "QX5RE": [
+    "DQF2400uE",
+    "DKF1130aE",
+    "DSF0062fE",
+    "DKF1130bE",
+    "DSF0062gE",
+    "DKF0580aE",
+    "DTF1315aE"
+  ],
+  "QX4RE": [
+    "DQKQX4E1E",
+    "DTFig1062aE",
+    "DKF1130fE",
+    "DSF0153aE",
+    "DKF1130gE",
+    "DSF0153bE",
+    "DKF1130hE"
+  ],
+  "BX2E": [
+    "DB6348rE"
+  ],
+  "QX3RE": [
+    "DQKQX3E1E",
+    "DSKQX3E1E"
+  ],
+  "QX2RE": [
+    "DQKQX2E1E"
+  ],
+  "QX2LE": [
+    "DQKQX2E2E",
+    "DSKQX2E21E",
+    "DSF1230aE",
+    "DSKQX2E23E"
+  ],
+  "QX3LE": [
+    "DQKQX3E2E"
+  ],
+  "BX1E": [
+    "DB6348aE",
+    "DSKBX1E"
+  ],
+  "QX4LE": [
+    "DQKQX4E2E"
+  ],
+  "QX5LE": [
+    "DQKQX5E2E",
+    "DSKQX5E2E"
+  ],
+  "QX6LE": [
+    "DQFc2990dE",
+    "DTFc0700aE",
+    "DMF1560fE",
+    "DSFc0400aE",
+    "DMF1560gE",
+    "DTFc0873aE"
+  ],
+  "QX7LE": [
+    "DQKQX7E2E",
+    "DMFCTE",
+    "DSKQX7E2E",
+    "DMFPPU2E"
+  ],
+  "QM2E": [
+    "DQKQM2E",
+    "DMFDCCTE",
+    "DSKQM2aE",
+    "DSKQM2bE",
+    "DSKQM2E"
+  ],
+  "QM3E": [
+    "DQKQM3E",
+    "DSFci2332aE",
+    "DMF0630aE",
+    "DSFc2332aE"
+  ],
+  "QM4E": [
+    "DQKQM4E",
+    "DTF0400fE",
+    "DMF0550fE",
+    "DSFi0400aE",
+    "DMF0550gE",
+    "DTFc1600aE",
+    "DSFc1803aE"
+  ],
+  "QM5E": [
+    "DQKQM5E",
+    "DSKQM5E",
+    "DSKQM5aE"
+  ],
+  "QM6E": [
+    "DQKQM6E",
+    "DSKQM6E"
+  ],
+  "QM7E": [
+    "DQKQM7E",
+    "DSKQM7E",
+    "DSKQM7aE"
+  ],
+  "BSWFLE": [
+    "DBSWFLE"
+  ],
+  "QS2FLE": [
+    "DQKQS2N2E"
+  ],
+  "B2E.57": [
+    "DB6348aE"
+  ],
+  "QS3FLE": [
+    "DQKQS3FLE"
+  ],
+  "QSBFLE": [
+    "DQKQSBN2E",
+    "DSKQSBFLE"
+  ],
+  "QS4FLE": [
+    "DQKQS4N2E"
+  ],
+  "QEAE.25": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.25": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.58": [
+    "DB6348aE"
+  ],
+  "QF6E.13": [
+    "DQ1500aE"
+  ],
+  "B2E.59": [
+    "DB6348aE"
+  ],
+  "QD5E.26": [
+    "DQ2318bE"
+  ],
+  "QEAE.26": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.21": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.21": [
+    "DQ3815aE"
+  ],
+  "B2E.60": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.25": [
+    "DQ2570aE"
+  ],
+  "QD1E.13": [
+    "DQ2910fE",
+    "DS1000aE"
+  ],
+  "QF2E.26": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.61": [
+    "DB6348aE"
+  ],
+  "QD3E.22": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.22": [
+    "DQ3309bE"
+  ],
+  "QEAE.27": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.27": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.62": [
+    "DB6348aE"
+  ],
+  "QF6E.14": [
+    "DQ1500aE"
+  ],
+  "B2E.63": [
+    "DB6348aE"
+  ],
+  "QD5E.28": [
+    "DQ2318bE"
+  ],
+  "QEAE.28": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.23": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.23": [
+    "DQ3815aE"
+  ],
+  "B2E.64": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.27": [
+    "DQ2570aE"
+  ],
+  "QD1E.14": [
+    "DQ2910fE",
+    "DS0890aE"
+  ],
+  "QF2E.28": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.65": [
+    "DB6348aE"
+  ],
+  "QD3E.24": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.24": [
+    "DQ3309bE"
+  ],
+  "QEAE.29": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.29": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.66": [
+    "DB6348aE"
+  ],
+  "QF6E.15": [
+    "DQ1500aE"
+  ],
+  "B2E.67": [
+    "DB6348aE"
+  ],
+  "QD5E.30": [
+    "DQ2318bE"
+  ],
+  "QEAE.30": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.25": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.25": [
+    "DQ3815aE"
+  ],
+  "B2E.68": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.29": [
+    "DQ2570aE"
+  ],
+  "QD1E.15": [
+    "DQ2910fE",
+    "DS1000aE"
+  ],
+  "QF2E.30": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.69": [
+    "DB6348aE"
+  ],
+  "QT1FOE.1": [
+    "DQ3815bE",
+    "DS0908cE"
+  ],
+  "QT2FOE.1": [
+    "DQ3735aE"
+  ],
+  "QTAFOE.1": [
+    "DQ2395aE",
+    "DS0569aE"
+  ],
+  "QT3FOE.1": [
+    "DQ2309aE",
+    "DS1707aE"
+  ],
+  "B2E.70": [
+    "DB6348aE",
+    "DS0774aE"
+  ],
+  "QT4FOE.1": [
+    "DQ2503aE"
+  ],
+  "QTBFOE.1": [
+    "DSAk1210aE",
+    "DQAk2164dE",
+    "DSAik1210bE"
+  ],
+  "QT5FOE": [
+    "DQ2710bE"
+  ],
+  "QTBFOE.2": [
+    "DSAik1210aE",
+    "DQAk2164uE",
+    "DSAk1210bE"
+  ],
+  "QT4FOE.2": [
+    "DQ2503bE"
+  ],
+  "B2E.71": [
+    "DB6348aE"
+  ],
+  "QT3FOE.2": [
+    "DQ2309bE",
+    "DS0774bE"
+  ],
+  "QTAFOE.2": [
+    "DQ2395bE",
+    "DS1707bE"
+  ],
+  "QT2FOE.2": [
+    "DQ3735bE",
+    "DS0569bE"
+  ],
+  "QT1FOE.2": [
+    "DQ3815aE"
+  ],
+  "B2E.72": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.31": [
+    "DQ2570aE"
+  ],
+  "QD1E.16": [
+    "DQ2910fE",
+    "DS1000aE"
+  ],
+  "QF2E.32": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.73": [
+    "DB6348aE"
+  ],
+  "QD3E.26": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.26": [
+    "DQ3309bE"
+  ],
+  "QEAE.31": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.31": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.74": [
+    "DB6348aE"
+  ],
+  "QF6E.16": [
+    "DQ1500aE"
+  ],
+  "B2E.75": [
+    "DB6348aE"
+  ],
+  "QD5E.32": [
+    "DQ2318bE"
+  ],
+  "QEAE.32": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.27": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.27": [
+    "DQ3815aE"
+  ],
+  "B2E.76": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.33": [
+    "DQ2570aE"
+  ],
+  "QD1E.17": [
+    "DQ2910fE",
+    "DS0890aE"
+  ],
+  "QF2E.34": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.77": [
+    "DB6348aE"
+  ],
+  "QD3E.28": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.28": [
+    "DQ3309bE"
+  ],
+  "QEAE.33": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.33": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.78": [
+    "DB6348aE"
+  ],
+  "QF6E.17": [
+    "DQ1500aE"
+  ],
+  "B2E.79": [
+    "DB6348aE"
+  ],
+  "QD5E.34": [
+    "DQ2318bE"
+  ],
+  "QEAE.34": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.29": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.29": [
+    "DQ3815aE"
+  ],
+  "B2E.80": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.35": [
+    "DQ2570aE"
+  ],
+  "QD1E.18": [
+    "DQ2910fE",
+    "DS1000aE"
+  ],
+  "QF2E.36": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.81": [
+    "DB6348aE"
+  ],
+  "QD3E.30": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.30": [
+    "DQ3309bE"
+  ],
+  "QEAE.35": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.35": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.82": [
+    "DB6348aE"
+  ],
+  "QF6E.18": [
+    "DQ1500aE"
+  ],
+  "B2E.83": [
+    "DB6348aE"
+  ],
+  "QD5E.36": [
+    "DQ2318bE"
+  ],
+  "QEAE.36": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QS4OE.1": [
+    "DQKQS4FRE",
+    "DSAirgk1253aE"
+  ],
+  "QSBOE.1": [
+    "DQKQSBN1E"
+  ],
+  "QS3ORE": [
+    "DQKQS3N1E",
+    "DSKQSBN1E"
+  ],
+  "BS2ORE.1": [
+    "DBAk2775aE"
+  ],
+  "BS2ORE.2": [
+    "DBAk3374aE"
+  ],
+  "QS2ORE": [
+    "DQWk1558uE"
+  ],
+  "BSWORE": [
+    "DBAk3340aE"
+  ],
+  "QR7ORE": [
+    "DQWik2394dE"
+  ],
+  "QR6ORE": [
+    "DQWk2268uE",
+    "DSWirk2687aE"
+  ],
+  "QR5ORE": [
+    "DQWir1765dE",
+    "DSW3200aE",
+    "DSWi3400aE",
+    "DTWgk3400aE"
+  ],
+  "QR4ORE": [
+    "DQWi1765dE",
+    "DSW3530aE",
+    "DSW3530bE"
+  ],
+  "QR3ORE": [
+    "DQWi1765dE",
+    "DSW3530aE",
+    "DSW3530bE"
+  ],
+  "QR2ORE": [
+    "DQWi1765dE",
+    "DSW3530aE",
+    "DSW3530bE"
+  ],
+  "QDWOE.1": [
+    "DQWir1765dE",
+    "DSW3530aE",
+    "DSW3530bE"
+  ],
+  "QFWOE": [
+    "DQWib1765dE",
+    "DSWb3530aE",
+    "DSWb3530bE"
+  ],
+  "QDWOE.2": [
+    "DQWib1765dE",
+    "DSWb3530aE",
+    "DSWb3530bE"
+  ],
+  "QFROE.2": [
+    "DQKQRO1E",
+    "DSOhom0280bE",
+    "DSOrf0800aE",
+    "DTRg1860aE",
+    "DSWi3152aE"
+  ],
+  "QDROE.3": [
+    "DQKQRO1E",
+    "DSKQRO11E",
+    "DSKQRO12E"
+  ],
+  "QFROE.3": [
+    "DQKQRO1E",
+    "DSKQRO11E",
+    "DSKQRO13E"
+  ],
+  "QDROE.4": [
+    "DQKQRO1E",
+    "DSKQRO11E",
+    "DSKQRO13E"
+  ],
+  "QFROE.4": [
+    "DQKQRO1E",
+    "DSKQRO11E",
+    "DSKQRO12E"
+  ],
+  "QDROE.5": [
+    "DQKQRO1E",
+    "DSKQRO11E",
+    "DSKQRO13E"
+  ],
+  "QFROE.5": [
+    "DQKQRO1E",
+    "DARES2800aE",
+    "DARES2800bE",
+    "DSKQROBE"
+  ],
+  "QDROE.6": [
+    "DQKQRO1E",
+    "DARES2800aE",
+    "DARES2800bE",
+    "DSKQROBGE"
+  ],
+  "QR2OLE": [
+    "DQKQRO1E",
+    "DARES2800aE",
+    "DARES2800bE",
+    "DSKQROBGE"
+  ],
+  "QR3OLE": [
+    "DQKQRO1E",
+    "DARES2800aE",
+    "DARES2800bE",
+    "DSKQROBGE"
+  ],
+  "QR4OLE": [
+    "DQKQRO1E",
+    "DSKQRO31E",
+    "DSKQRO23E"
+  ],
+  "QR5OLE": [
+    "DQOa2550dE",
+    "DSOasrm0800aE",
+    "DSOa0800aE",
+    "DSOai1145aE",
+    "DTOa0200fE",
+    "DTOa1860aE",
+    "DSOhom0280aE",
+    "DSOrfg0800aE"
+  ],
+  "QR6OLE": [
+    "DQO2500dE",
+    "DTOa0200aE",
+    "DSOa2700aE",
+    "DSOair2700aE",
+    "DSOa2800aE"
+  ],
+  "QR7OLE": [
+    "DQO2350uE",
+    "DSOi1133aE"
+  ],
+  "BSWOLE": [
+    "DBO3341aE",
+    "DTO0300aE",
+    "DSO2400aE"
+  ],
+  "QS2OLE": [
+    "DQOxrm1528dE",
+    "XRM(0)1626aE"
+  ],
+  "B2E.85": [
+    "DBO6406aE"
+  ],
+  "QS3OLE": [
+    "DQO1749uE"
+  ],
+  "QSBOE.2": [
+    "DQKQSBN2E",
+    "DTOi0800aE"
+  ],
+  "QS4OE.2": [
+    "DQKQS4N2E"
+  ],
+  "QEAE.37": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.37": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.86": [
+    "DB6348aE"
+  ],
+  "QF6E.19": [
+    "DQ1500aE"
+  ],
+  "B2E.87": [
+    "DB6348aE"
+  ],
+  "QD5E.38": [
+    "DQ2318bE"
+  ],
+  "QEAE.38": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.31": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.31": [
+    "DQ3815aE"
+  ],
+  "B2E.88": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.37": [
+    "DQ2570aE"
+  ],
+  "QD1E.19": [
+    "DQ2910fE",
+    "DS1000aE"
+  ],
+  "QF2E.38": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.89": [
+    "DB6348aE"
+  ],
+  "QD3E.32": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.32": [
+    "DQ3309bE"
+  ],
+  "QEAE.39": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.39": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.90": [
+    "DB6348aE"
+  ],
+  "QF6E.20": [
+    "DQ1500aE"
+  ],
+  "B2E.91": [
+    "DB6348aE"
+  ],
+  "QD5E.40": [
+    "DQ2318bE"
+  ],
+  "QEAE.40": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.33": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.33": [
+    "DQ3815aE"
+  ],
+  "B2E.92": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.39": [
+    "DQ2570aE"
+  ],
+  "QD1E.20": [
+    "DQ2910fE",
+    "DS0890aE"
+  ],
+  "QF2E.40": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.93": [
+    "DB6348aE"
+  ],
+  "QD3E.34": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.34": [
+    "DQ3309bE"
+  ],
+  "QEAE.41": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.41": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.94": [
+    "DB6348aE"
+  ],
+  "QF6E.21": [
+    "DQ1500aE"
+  ],
+  "B2E.95": [
+    "DB6348aE"
+  ],
+  "QD5E.42": [
+    "DQ2318bE"
+  ],
+  "QEAE.42": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.35": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.35": [
+    "DQ3815aE"
+  ],
+  "B2E.96": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.41": [
+    "DQ2570aE"
+  ],
+  "QD1E.21": [
+    "DQ2910fE",
+    "DS1000aE"
+  ],
+  "QF2E.42": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.97": [
+    "DB6348aE"
+  ],
+  "QT1OTE.1": [
+    "DQ3815bE",
+    "DS0908cE"
+  ],
+  "QT2OTE.1": [
+    "DQ3735aE"
+  ],
+  "QTAOTE.1": [
+    "DQ2395aE",
+    "DS0569aE"
+  ],
+  "QT3OTE.1": [
+    "DQ2309aE",
+    "DS1707aE"
+  ],
+  "B2E.98": [
+    "DB6348aE",
+    "DS0774aE"
+  ],
+  "QT4OTE.1": [
+    "DQ2503aE"
+  ],
+  "QTBOTE.1": [
+    "DSAk1210aE",
+    "DQAk2164dE",
+    "DSAik1210bE"
+  ],
+  "QT5OTE": [
+    "DQ2710bE"
+  ],
+  "QTBOTE.2": [
+    "DSAik1210aE",
+    "DQAk2164uE",
+    "DSAk1210bE"
+  ],
+  "QT4OTE.2": [
+    "DQ2503bE"
+  ],
+  "B2E.99": [
+    "DB6348aE"
+  ],
+  "QT3OTE.2": [
+    "DQ2309bE",
+    "DS0774bE"
+  ],
+  "QTAOTE.2": [
+    "DQ2395bE",
+    "DS1707bE"
+  ],
+  "QT2OTE.2": [
+    "DQ3735bE",
+    "DS0569bE"
+  ],
+  "QT1OTE.2": [
+    "DQ3815aE"
+  ],
+  "B2E.100": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.43": [
+    "DQ2570aE"
+  ],
+  "QD1E.22": [
+    "DQ2910fE",
+    "DS1000aE"
+  ],
+  "QF2E.44": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.101": [
+    "DB6348aE"
+  ],
+  "QD3E.36": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.36": [
+    "DQ3309bE"
+  ],
+  "QEAE.43": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.43": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.102": [
+    "DB6348aE"
+  ],
+  "QF6E.22": [
+    "DQ1500aE"
+  ],
+  "B2E.103": [
+    "DB6348aE"
+  ],
+  "QD5E.44": [
+    "DQ2318bE"
+  ],
+  "QEAE.44": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.37": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.37": [
+    "DQ3815aE"
+  ],
+  "B2E.104": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.45": [
+    "DQ2570aE"
+  ],
+  "QD1E.23": [
+    "DQ2910fE",
+    "DS0890aE"
+  ],
+  "QF2E.46": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.105": [
+    "DB6348aE"
+  ],
+  "QD3E.38": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.38": [
+    "DQ3309bE"
+  ],
+  "QEAE.45": [
+    "DQ2710aE",
+    "DS1363bE"
+  ],
+  "QD5E.45": [
+    "DQ2318aE",
+    "DS2542aE"
+  ],
+  "B2E.106": [
+    "DB6348aE"
+  ],
+  "QF6E.23": [
+    "DQ1500aE"
+  ],
+  "B2E.107": [
+    "DB6348aE"
+  ],
+  "QD5E.46": [
+    "DQ2318bE"
+  ],
+  "QEAE.46": [
+    "DQ2710bE",
+    "DS2542bE"
+  ],
+  "QF4E.39": [
+    "DQ3309aE",
+    "DS1363aE"
+  ],
+  "QD3E.39": [
+    "DQ3815aE"
+  ],
+  "B2E.108": [
+    "DB6348aE",
+    "DS0908aE"
+  ],
+  "QF2E.47": [
+    "DQ2570aE"
+  ],
+  "QD1E.24": [
+    "DQ2910fE",
+    "DS1000aE"
+  ],
+  "QF2E.48": [
+    "DQ2570bE",
+    "DS1000bE"
+  ],
+  "B2E.109": [
+    "DB6348aE"
+  ],
+  "QD3E.40": [
+    "DQ3815bE",
+    "DS0908bE"
+  ],
+  "QF4E.40": [
+    "DQ3309bE"
+  ],
+  "QLA10RE": [
+    "DQT2140uE",
+    "DTTig1574aE"
+  ],
+  "QLA9RE": [
+    "DQT2140dE",
+    "DSTir2443aE"
+  ],
+  "BLA6RE.1": [
+    "DBT6406gE"
+  ],
+  "QLA8RE": [
+    "DQTz1441uE"
+  ],
+  "BLA6RE.2": [
+    "DBT6406gE"
+  ],
+  "QLA7RE": [
+    "DQT2140uE"
+  ],
+  "QLA6RE": [
+    "DQT2140uE",
+    "DSTi2902aE",
+    "DSTi2902bE"
+  ],
+  "QLA5RE": [
+    "DQT2140uE",
+    "DST1620aE"
+  ],
+  "BLA4RE": [
+    "DBT6406aE",
+    "DSTir2200aE"
+  ],
+  "QLA4RE": [
+    "DQT1800uE"
+  ],
+  "QLA3RE": [
+    "DQT2344uE",
+    "DSTs1120fE",
+    "DTTi2680aE"
+  ],
+  "BLA2RE": [
+    "DBT4456aE"
+  ],
+  "QLA2RE": [
+    "DQTt2500uE",
+    "DSTtg1092aE"
+  ],
+  "QLX2RE.1": [
+    "DQTtir2133uE"
+  ],
+  "QLX3RE.1": [
+    "DQTtg1580dE"
+  ],
+  "BLX1RE.1": [
+    "DBTt4456fE"
+  ],
+  "QLX4RE": [
+    "DQTt1104uE"
+  ],
+  "BLX1RE.2": [
+    "DBTt4456fE"
+  ],
+  "QLX3RE.2": [
+    "DQTt1580uE"
+  ],
+  "QLX2RE.2": [
+    "DQT1736dE",
+    "DST0555fE"
+  ],
+  "QLB8RE": [
+    "DQT2423dE"
+  ],
+  "QLB7RE": [
+    "DQT2443uE",
+    "DSTs1120aE",
+    "DSTir1016aE"
+  ],
+  "BLB2RE": [
+    "DBT4456gE"
+  ],
+  "QLB4RE": [
+    "DQT1850uE",
+    "DSTi2175aE"
+  ],
+  "QLB1RE": [
+    "DQT2380uE",
+    "DST0927aE"
+  ],
+  "QLY2RE.1": [
+    "DQT1500uE"
+  ],
+  "QLY4RE.1": [
+    "DQT2080dE",
+    "DSTi3313aE"
+  ],
+  "BLY2RE.1": [
+    "DBT4456hE"
+  ],
+  "QLY5RE": [
+    "DQT1504uE"
+  ],
+  "BLY2RE.2": [
+    "DBT4456hE"
+  ],
+  "QLY4RE.2": [
+    "DQT2080uE"
+  ],
+  "QLY2RE.2": [
+    "DQT1500dE",
+    "DSTir3313aE"
+  ],
+  "QLC7RE": [
+    "DQT2624dE"
+  ],
+  "QLC6RE": [
+    "DQT2450dE",
+    "DSTi1508aE"
+  ],
+  "QLC5RE": [
+    "DQTp2200dE",
+    "DSTs1120bE"
+  ],
+  "QLC3RE": [
+    "D-QLC3RE-b",
+    "DTSsr0200aE",
+    "DTTg0926aE",
+    "DSTs1120hE",
+    "DSTi1271aE"
+  ],
+  "BLC2RE": [
+    "D-BLC2RE",
+    "D-QLC3RE-a"
+  ],
+  "QLC2RE": [
+    "D-QLC2RE-a",
+    "D-QLC2RE-b"
+  ],
+  "QKARE": [
+    "DQCSRaE",
+    "D-QKARE"
+  ]
+}
