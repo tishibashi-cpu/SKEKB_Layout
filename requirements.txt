@@ -1,5 +1,0 @@
-# コア (cli.py / skekb_layout.py) は標準ライブラリのみで動作し、これらは不要。
-# Duct_Table 書き出し (duct_table.py) と config 再生成 (extract_config.py) に使用:
-openpyxl>=3.1
-# xlsm から VBA を解析する場合のみ (extract_config.py の一部):
-oletools>=0.60
