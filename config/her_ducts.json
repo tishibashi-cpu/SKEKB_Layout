@@ -1,148 +1,148 @@
 {
   "QKALE": [
-    "D-QKALE",
-    "DQCSLaE"
+    "D-QKALE_Or",
+    "DQCSLaE_Or"
   ],
   "QLC2LE": [
-    "D-QLC2LE"
+    "D-QLC2LE_Or"
   ],
   "BLC1LE": [
-    "D-BLC1LE"
+    "D-BLC1LE_Or"
   ],
   "QLC3LE": [
-    "D-QLC3LE"
+    "D-QLC3LE_Or"
   ],
   "QLC4LE": [
-    "DQTtp2175uE",
-    "DSTt1150fE",
-    "PMD01H5_1150aE",
-    "DSTts1120gE",
-    "DTTig1156aE"
+    "DQTtp2175uE_Or",
+    "DSTt1150fE_Or",
+    "PMD01H5_1150aE_Or",
+    "DSTts1120gE_Or",
+    "DTTig1156aE_Or"
   ],
   "QLC5LE": [
-    "DQTti2150dE",
-    "DSTts1120aE"
+    "DQTti2150dE_Or",
+    "DSTts1120aE_Or"
   ],
   "QLC7LE": [
-    "DQTt2774uE",
-    "DSTti1694aE"
+    "DQTt2774uE_Or",
+    "DSTti1694aE_Or"
   ],
   "QLY1LE.1": [
-    "DQTt1500uE"
+    "DQTt1500uE_Or"
   ],
   "QLY2LE.1": [
-    "DQTt1680dE",
-    "DSTt1500aE",
-    "PMD01H4_1500aE",
-    "DSTtir1913aE"
+    "DQTt1680dE_Or",
+    "DSTt1500aE_Or",
+    "PMD01H4_1500aE_Or",
+    "DSTtir1913aE_Or"
   ],
   "BLY1LE.1": [
-    "DBTt4456aE"
+    "DBTt4456aE_Or"
   ],
   "QLY3LE": [
-    "DQTt1504uE"
+    "DQTt1504uE_Or"
   ],
   "BLY1LE.2": [
-    "DBTt4456aE"
+    "DBTt4456aE_Or"
   ],
   "QLY2LE.2": [
-    "DQTt1800uE"
+    "DQTt1800uE_Or"
   ],
   "QLY1LE.2": [
-    "DQTt1500dE",
-    "DSTti1793aE",
-    "PMD01H3_1500aE",
-    "DSTt1500gE"
+    "DQTt1500dE_Or",
+    "DSTti1793aE_Or",
+    "PMD01H3_1500aE_Or",
+    "DSTt1500gE_Or"
   ],
   "QLB1LE": [
-    "DQTt2170dE"
+    "DQTt2170dE_Or"
   ],
   "QLB2LE": [
-    "DQTt1760dE",
-    "DSTtir2376aE"
+    "DQTt1760dE_Or",
+    "DSTtir2376aE_Or"
   ],
   "BLB1LE": [
-    "DBTt4456gE",
-    "DSTt1177aE",
-    "PMD01V1_1177aE"
+    "DBTt4456gE_Or",
+    "DSTt1177aE_Or",
+    "PMD01V1_1177aE_Or"
   ],
   "QLB3LE": [
-    "DQTt2370uE"
+    "DQTt2370uE_Or"
   ],
   "QLB4LE": [
-    "DQT2300uE",
-    "DST1500aE",
+    "DQT2300uE_Or",
+    "DST1500aE_Or",
     "PMD01H2_1500aE",
-    "DSTi2300aE",
-    "DST0555aE",
-    "DSTts1120hE"
+    "DSTi2300aE_Or",
+    "DST0555aE_Or",
+    "DSTts1120hE_Or"
   ],
   "QLX1LE.1": [
-    "DQT1820dE",
-    "DSTirg1843aE"
+    "DQT1820dE_Or",
+    "DSTirg1843aE_Or"
   ],
   "BLX2LE.1": [
-    "DBT4456fE"
+    "DBT4456fE_Or"
   ],
   "QLX2LE": [
-    "DQT1104uE"
+    "DQT1104uE_Or"
   ],
   "BLX2LE.2": [
-    "DBT4456fE"
+    "DBT4456fE_Or"
   ],
   "QLX1LE.2": [
-    "DQTz1780uE"
+    "DQTz1780uE_Or"
   ],
   "QLA2LE": [
-    "DQT2423dE",
-    "DSTig1800aE"
+    "DQT2423dE_Or",
+    "DSTig1800aE_Or"
   ],
   "QLA3LE": [
-    "DQT1780uE",
-    "DST1500fE",
+    "DQT1780uE_Or",
+    "DST1500fE_Or",
     "PMD01H1_1500aE",
-    "DSTi1800aE"
+    "DSTi1800aE_Or"
   ],
   "QLA4LE": [
-    "DQT1800dE",
-    "DTTir1152aE",
-    "DSTs1120gE"
+    "DQT1800dE_Or",
+    "DTTir1152aE_Or",
+    "DSTs1120gE_Or"
   ],
   "BLA2LE": [
-    "DBT6406fE"
+    "DBT6406fE_Or"
   ],
   "QLA5LE": [
-    "DQT2400uE"
+    "DQT2400uE_Or"
   ],
   "QLA6LE": [
-    "DQT2400uE",
-    "DSTi2400aE",
-    "DST2533aE",
-    "DSTi2400fE"
+    "DQT2400uE_Or",
+    "DSTi2400aE_Or",
+    "DST2533aE_Or",
+    "DSTi2400fE_Or"
   ],
   "QLA7LE": [
-    "DQT2140dE",
-    "DSTi2447aE"
+    "DQT2140dE_Or",
+    "DSTi2447aE_Or"
   ],
   "BLA4LE.1": [
-    "DBT6406hE"
+    "DBT6406hE_Or"
   ],
   "QLA8LE": [
-    "DQT1441uE"
+    "DQT1441uE_Or"
   ],
   "BLA4LE.2": [
-    "DBT6406hE"
+    "DBT6406hE_Or"
   ],
   "QLA9LE": [
-    "DQT2140uE"
+    "DQT2140uE_Or"
   ],
   "QLA10LE": [
-    "DQT2140dE",
-    "DSTir1652aE"
+    "DQT2140dE_Or",
+    "DSTir1652aE_Or"
   ],
   "QF4E.1": [
     "DQ3309aE",
-    "DTTig1574fE"
+    "DTTig1574fE_Or"
   ],
   "QD3E.1": [
     "DQ3815aE"
@@ -300,17 +300,17 @@
     "DQ2503aE"
   ],
   "QTBTNE.1": [
-    "DSAk1039aE",
-    "DQAk2164dE",
-    "DSAik1039bE"
+    "DSAk1039aE_Or",
+    "DQAk2164dE_Or",
+    "DSAik1039bE_Or"
   ],
   "QT5TNE": [
     "DQ2710bE"
   ],
   "QTBTNE.2": [
-    "DSAik1039aE",
-    "DQAk2164uE",
-    "DSAk1039bE"
+    "DSAik1039aE_Or",
+    "DQAk2164uE_Or",
+    "DSAk1039bE_Or"
   ],
   "QT4TNE.2": [
     "DQ2503bE"
@@ -836,17 +836,17 @@
     "DQ2503aE"
   ],
   "QTBNFE.1": [
-    "DSAk1039aE",
-    "DQAk2164dE",
-    "DSAik1039bE"
+    "DSAk1039aE_Or",
+    "DQAk2164dE_Or",
+    "DSAik1039bE_Or"
   ],
   "QT5NFE": [
     "DQ2710bE"
   ],
   "QTBNFE.2": [
-    "DSAik1039aE",
-    "DQAk2164uE",
-    "DSAk1039bE"
+    "DSAik1039aE_Or",
+    "DQAk2164uE_Or",
+    "DSAk1039bE_Or"
   ],
   "QT4NFE.2": [
     "DQ2503bE"
@@ -1068,51 +1068,51 @@
   ],
   "QI4E": [
     "DSF2734aE",
-    "DQFa1253dE",
-    "DSFa0130aE",
-    "DSFsbpm0130rE",
-    "DSFai4150aE"
+    "DQFa1253dE_Or",
+    "DSFa0130aE_Or",
+    "DSFsbpm0130rE_Or",
+    "DSFai4150aE_Or"
   ],
   "QI3E": [
     "DQKQI3E",
     "DSKQI31E",
     "DSKQI32E",
-    "DSFa0544aE",
+    "DSFa0544aE_Or",
     "DSFSEPT3",
     "DSFSEPT4"
   ],
   "QI2E": [
     "DQKQI2E",
     "DSKQI21E",
-    "DSFaig3753aE",
+    "DSFaig3753aE_Or",
     "DSFGVDUMMY120E"
   ],
   "QX7RE": [
-    "DQFa2400uE",
-    "DSFabt3202aE",
+    "DQFa2400uE_Or",
+    "DSFabt3202aE_Or",
     "DSKQX7E12E"
   ],
   "QX6RE": [
-    "DQF2910uE",
-    "DSFir4000aE",
-    "DTFa1252aE"
+    "DQF2910uE_Or",
+    "DSFir4000aE_Or",
+    "DTFa1252aE_Or"
   ],
   "QX5RE": [
-    "DQF2400uE",
+    "DQF2400uE_Or",
     "DKF1130aE",
-    "DSF0062fE",
+    "DSF0062fE_Or",
     "DKF1130bE",
-    "DSF0062gE",
+    "DSF0062gE_Or",
     "DKF0580aE",
-    "DTF1315aE"
+    "DTF1315aE_Or"
   ],
   "QX4RE": [
     "DQKQX4E1E",
-    "DTFig1062aE",
+    "DTFig1062aE_Or",
     "DKF1130fE",
-    "DSF0153aE",
+    "DSF0153aE_Or",
     "DKF1130gE",
-    "DSF0153bE",
+    "DSF0153bE_Or",
     "DKF1130hE"
   ],
   "BX2E": [
@@ -1128,7 +1128,7 @@
   "QX2LE": [
     "DQKQX2E2E",
     "DSKQX2E21E",
-    "DSF1230aE",
+    "DSF1230aE_Or",
     "DSKQX2E23E"
   ],
   "QX3LE": [
@@ -1146,12 +1146,12 @@
     "DSKQX5E2E"
   ],
   "QX6LE": [
-    "DQFc2990dE",
-    "DTFc0700aE",
+    "DQFc2990dE_Or",
+    "DTFc0700aE_Or",
     "DMF1560fE",
-    "DSFc0400aE",
+    "DSFc0400aE_Or",
     "DMF1560gE",
-    "DTFc0873aE"
+    "DTFc0873aE_Or"
   ],
   "QX7LE": [
     "DQKQX7E2E",
@@ -1168,9 +1168,9 @@
   ],
   "QM3E": [
     "DQKQM3E",
-    "DSFci2332aE",
+    "DSFci2332aE_Or",
     "DMF0630aE",
-    "DSFc2332aE"
+    "DSFc2332aE_Or"
   ],
   "QM4E": [
     "DQKQM4E",
@@ -1178,8 +1178,8 @@
     "DMF0550fE",
     "DSFi0400aE",
     "DMF0550gE",
-    "DTFc1600aE",
-    "DSFc1803aE"
+    "DTFc1600aE_Or",
+    "DSFc1803aE_Or"
   ],
   "QM5E": [
     "DQKQM5E",
@@ -1398,17 +1398,17 @@
     "DQ2503aE"
   ],
   "QTBFOE.1": [
-    "DSAk1210aE",
-    "DQAk2164dE",
-    "DSAik1210bE"
+    "DSAk1210aE_Or",
+    "DQAk2164dE_Or",
+    "DSAik1210bE_Or"
   ],
   "QT5FOE": [
     "DQ2710bE"
   ],
   "QTBFOE.2": [
-    "DSAik1210aE",
-    "DQAk2164uE",
-    "DSAk1210bE"
+    "DSAik1210aE_Or",
+    "DQAk2164uE_Or",
+    "DSAk1210bE_Or"
   ],
   "QT4FOE.2": [
     "DQ2503bE"
@@ -1594,7 +1594,7 @@
   ],
   "QS4OE.1": [
     "DQKQS4FRE",
-    "DSAirgk1253aE"
+    "DSAirgk1253aE_Or"
   ],
   "QSBOE.1": [
     "DQKQSBN1E"
@@ -1604,66 +1604,66 @@
     "DSKQSBN1E"
   ],
   "BS2ORE.1": [
-    "DBAk2775aE"
+    "DBAk2775aE_Or"
   ],
   "BS2ORE.2": [
-    "DBAk3374aE"
+    "DBAk3374aE_Or"
   ],
   "QS2ORE": [
-    "DQWk1558uE"
+    "DQWk1558uE_Or"
   ],
   "BSWORE": [
-    "DBAk3340aE"
+    "DBAk3340aE_Or"
   ],
   "QR7ORE": [
-    "DQWik2394dE"
+    "DQWik2394dE_Or"
   ],
   "QR6ORE": [
-    "DQWk2268uE",
-    "DSWirk2687aE"
+    "DQWk2268uE_Or",
+    "DSWirk2687aE_Or"
   ],
   "QR5ORE": [
-    "DQWir1765dE",
-    "DSW3200aE",
-    "DSWi3400aE",
-    "DTWgk3400aE"
+    "DQWir1765dE_Or",
+    "DSW3200aE_Or",
+    "DSWi3400aE_Or",
+    "DTWgk3400aE_Or"
   ],
   "QR4ORE": [
-    "DQWi1765dE",
-    "DSW3530aE",
-    "DSW3530bE"
+    "DQWi1765dE_Or",
+    "DSW3530aE_Or",
+    "DSW3530bE_Or"
   ],
   "QR3ORE": [
-    "DQWi1765dE",
-    "DSW3530aE",
-    "DSW3530bE"
+    "DQWi1765dE_Or",
+    "DSW3530aE_Or",
+    "DSW3530bE_Or"
   ],
   "QR2ORE": [
-    "DQWi1765dE",
-    "DSW3530aE",
-    "DSW3530bE"
+    "DQWi1765dE_Or",
+    "DSW3530aE_Or",
+    "DSW3530bE_Or"
   ],
   "QDWOE.1": [
-    "DQWir1765dE",
-    "DSW3530aE",
-    "DSW3530bE"
+    "DQWir1765dE_Or",
+    "DSW3530aE_Or",
+    "DSW3530bE_Or"
   ],
   "QFWOE": [
-    "DQWib1765dE",
-    "DSWb3530aE",
-    "DSWb3530bE"
+    "DQWib1765dE_Or",
+    "DSWb3530aE_Or",
+    "DSWb3530bE_Or"
   ],
   "QDWOE.2": [
-    "DQWib1765dE",
-    "DSWb3530aE",
-    "DSWb3530bE"
+    "DQWib1765dE_Or",
+    "DSWb3530aE_Or",
+    "DSWb3530bE_Or"
   ],
   "QFROE.2": [
     "DQKQRO1E",
     "DSOhom0280bE",
-    "DSOrf0800aE",
-    "DTRg1860aE",
-    "DSWi3152aE"
+    "DSOrf0800aE_Or",
+    "DTRg1860aE_Or",
+    "DSWi3152aE_Or"
   ],
   "QDROE.3": [
     "DQKQRO1E",
@@ -1720,44 +1720,44 @@
     "DSKQRO23E"
   ],
   "QR5OLE": [
-    "DQOa2550dE",
-    "DSOasrm0800aE",
-    "DSOa0800aE",
-    "DSOai1145aE",
-    "DTOa0200fE",
-    "DTOa1860aE",
+    "DQOa2550dE_Or",
+    "DSOasrm0800aE_Or",
+    "DSOa0800aE_Or",
+    "DSOai1145aE_Or",
+    "DTOa0200fE_Or",
+    "DTOa1860aE_Or",
     "DSOhom0280aE",
-    "DSOrfg0800aE"
+    "DSOrfg0800aE_Or"
   ],
   "QR6OLE": [
-    "DQO2500dE",
-    "DTOa0200aE",
-    "DSOa2700aE",
-    "DSOair2700aE",
-    "DSOa2800aE"
+    "DQO2500dE_Or",
+    "DTOa0200aE_Or",
+    "DSOa2700aE_Or",
+    "DSOair2700aE_Or",
+    "DSOa2800aE_Or"
   ],
   "QR7OLE": [
-    "DQO2350uE",
-    "DSOi1133aE"
+    "DQO2350uE_Or",
+    "DSOi1133aE_Or"
   ],
   "BSWOLE": [
-    "DBO3341aE",
-    "DTO0300aE",
-    "DSO2400aE"
+    "DBO3341aE_Or",
+    "DTO0300aE_Or",
+    "DSO2400aE_Or"
   ],
   "QS2OLE": [
-    "DQOxrm1528dE",
-    "XRM(0)1626aE"
+    "DQOxrm1528dE_Or",
+    "XRM(0)1626aE_Or"
   ],
   "B2E.85": [
-    "DBO6406aE"
+    "DBO6406aE_Or"
   ],
   "QS3OLE": [
-    "DQO1749uE"
+    "DQO1749uE_Or"
   ],
   "QSBOE.2": [
     "DQKQSBN2E",
-    "DTOi0800aE"
+    "DTOi0800aE_Or"
   ],
   "QS4OE.2": [
     "DQKQS4N2E"
@@ -1946,17 +1946,17 @@
     "DQ2503aE"
   ],
   "QTBOTE.1": [
-    "DSAk1210aE",
-    "DQAk2164dE",
-    "DSAik1210bE"
+    "DSAk1210aE_Or",
+    "DQAk2164dE_Or",
+    "DSAik1210bE_Or"
   ],
   "QT5OTE": [
     "DQ2710bE"
   ],
   "QTBOTE.2": [
-    "DSAik1210aE",
-    "DQAk2164uE",
-    "DSAk1210bE"
+    "DSAik1210aE_Or",
+    "DQAk2164uE_Or",
+    "DSAk1210bE_Or"
   ],
   "QT4OTE.2": [
     "DQ2503bE"
@@ -2117,145 +2117,145 @@
     "DQ3309bE"
   ],
   "QLA10RE": [
-    "DQT2140uE",
-    "DTTig1574aE"
+    "DQT2140uE_Or",
+    "DTTig1574aE_Or"
   ],
   "QLA9RE": [
-    "DQT2140dE",
-    "DSTir2443aE"
+    "DQT2140dE_Or",
+    "DSTir2443aE_Or"
   ],
   "BLA6RE.1": [
-    "DBT6406gE"
+    "DBT6406gE_Or"
   ],
   "QLA8RE": [
-    "DQTz1441uE"
+    "DQTz1441uE_Or"
   ],
   "BLA6RE.2": [
-    "DBT6406gE"
+    "DBT6406gE_Or"
   ],
   "QLA7RE": [
-    "DQT2140uE"
+    "DQT2140uE_Or"
   ],
   "QLA6RE": [
-    "DQT2140uE",
-    "DSTi2902aE",
-    "DSTi2902bE"
+    "DQT2140uE_Or",
+    "DSTi2902aE_Or",
+    "DSTi2902bE_Or"
   ],
   "QLA5RE": [
-    "DQT2140uE",
-    "DST1620aE"
+    "DQT2140uE_Or",
+    "DST1620aE_Or"
   ],
   "BLA4RE": [
-    "DBT6406aE",
-    "DSTir2200aE"
+    "DBT6406aE_Or",
+    "DSTir2200aE_Or"
   ],
   "QLA4RE": [
-    "DQT1800uE"
+    "DQT1800uE_Or"
   ],
   "QLA3RE": [
-    "DQT2344uE",
-    "DSTs1120fE",
-    "DTTi2680aE"
+    "DQT2344uE_Or",
+    "DSTs1120fE_Or",
+    "DTTi2680aE_Or"
   ],
   "BLA2RE": [
-    "DBT4456aE"
+    "DBT4456aE_Or"
   ],
   "QLA2RE": [
-    "DQTt2500uE",
-    "DSTtg1092aE"
+    "DQTt2500uE_Or",
+    "DSTtg1092aE_Or"
   ],
   "QLX2RE.1": [
-    "DQTtir2133uE"
+    "DQTtir2133uE_Or"
   ],
   "QLX3RE.1": [
-    "DQTtg1580dE"
+    "DQTtg1580dE_Or"
   ],
   "BLX1RE.1": [
-    "DBTt4456fE"
+    "DBTt4456fE_Or"
   ],
   "QLX4RE": [
-    "DQTt1104uE"
+    "DQTt1104uE_Or"
   ],
   "BLX1RE.2": [
-    "DBTt4456fE"
+    "DBTt4456fE_Or"
   ],
   "QLX3RE.2": [
-    "DQTt1580uE"
+    "DQTt1580uE_Or"
   ],
   "QLX2RE.2": [
-    "DQT1736dE",
-    "DST0555fE"
+    "DQT1736dE_Or",
+    "DST0555fE_Or"
   ],
   "QLB8RE": [
-    "DQT2423dE"
+    "DQT2423dE_Or"
   ],
   "QLB7RE": [
-    "DQT2443uE",
-    "DSTs1120aE",
-    "DSTir1016aE"
+    "DQT2443uE_Or",
+    "DSTs1120aE_Or",
+    "DSTir1016aE_Or"
   ],
   "BLB2RE": [
-    "DBT4456gE"
+    "DBT4456gE_Or"
   ],
   "QLB4RE": [
-    "DQT1850uE",
-    "DSTi2175aE"
+    "DQT1850uE_Or",
+    "DSTi2175aE_Or"
   ],
   "QLB1RE": [
-    "DQT2380uE",
-    "DST0927aE"
+    "DQT2380uE_Or",
+    "DST0927aE_Or"
   ],
   "QLY2RE.1": [
-    "DQT1500uE"
+    "DQT1500uE_Or"
   ],
   "QLY4RE.1": [
-    "DQT2080dE",
-    "DSTi3313aE"
+    "DQT2080dE_Or",
+    "DSTi3313aE_Or"
   ],
   "BLY2RE.1": [
-    "DBT4456hE"
+    "DBT4456hE_Or"
   ],
   "QLY5RE": [
-    "DQT1504uE"
+    "DQT1504uE_Or"
   ],
   "BLY2RE.2": [
-    "DBT4456hE"
+    "DBT4456hE_Or"
   ],
   "QLY4RE.2": [
-    "DQT2080uE"
+    "DQT2080uE_Or"
   ],
   "QLY2RE.2": [
-    "DQT1500dE",
-    "DSTir3313aE"
+    "DQT1500dE_Or",
+    "DSTir3313aE_Or"
   ],
   "QLC7RE": [
-    "DQT2624dE"
+    "DQT2624dE_Or"
   ],
   "QLC6RE": [
-    "DQT2450dE",
-    "DSTi1508aE"
+    "DQT2450dE_Or",
+    "DSTi1508aE_Or"
   ],
   "QLC5RE": [
-    "DQTp2200dE",
-    "DSTs1120bE"
+    "DQTp2200dE_Or",
+    "DSTs1120bE_Or"
   ],
   "QLC3RE": [
-    "D-QLC3RE-b",
-    "DTSsr0200aE",
-    "DTTg0926aE",
-    "DSTs1120hE",
-    "DSTi1271aE"
+    "D-QLC3RE-b_Or",
+    "DTSsr0200aE_Or",
+    "DTTg0926aE_Or",
+    "DSTs1120hE_Or",
+    "DSTi1271aE_Or"
   ],
   "BLC2RE": [
-    "D-BLC2RE",
-    "D-QLC3RE-a"
+    "D-BLC2RE_Or",
+    "D-QLC3RE-a_Or"
   ],
   "QLC2RE": [
-    "D-QLC2RE-a",
-    "D-QLC2RE-b"
+    "D-QLC2RE-a_Or",
+    "D-QLC2RE-b_Or"
   ],
   "QKARE": [
-    "DQCSRaE",
-    "D-QKARE"
+    "DQCSRaE_Or",
+    "D-QKARE_Or"
   ]
 }

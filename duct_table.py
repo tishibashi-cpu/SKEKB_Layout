@@ -134,12 +134,23 @@ def _compute_mag_others(elements, by_element) -> dict:
     return {m: "\n".join(v) for m, v in others.items()}
 
 
+def _load_duct_map(ring: str) -> dict:
+    """要素名 -> ダクト名リスト。統合 config (ducts.json) では挿入名に "_Or" が
+    付くため、台帳 (Duct_Type) を引く用途向けに "_Or" を外して返す。"""
+    try:
+        d = _load(f"{ring.lower()}_ducts.json")
+        return {k: [b[:-3] if b.endswith("_Or") else b for b in v]
+                for k, v in d.items()}
+    except FileNotFoundError:
+        return _load(f"{ring.lower()}_duct_by_element.json")
+
+
 def generate_duct_table(dispog_path: str, ring: str) -> list[dict]:
     """Component を背骨に Duct_Table の行(辞書)リストを生成する。"""
     elements = sk.parse_dispog(dispog_path)
     component = _load(f"{ring.lower()}_component.json")
     ducttype = _load(f"{ring.lower()}_ducttype.json")
-    by_element = _load(f"{ring.lower()}_duct_by_element.json")
+    by_element = _load_duct_map(ring)
 
     # dispog: 基本磁石名 -> S (最初の出現)
     s_by_mag: dict[str, float] = {}

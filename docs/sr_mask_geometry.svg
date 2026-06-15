@@ -1,0 +1,41 @@
+<svg width="680" height="310" viewBox="0 0 680 310" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, 'Hiragino Sans', 'Noto Sans CJK JP', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#555550" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="680" height="310" fill="#ffffff"/>
+
+  <line x1="540" y1="92" x2="620" y2="92" stroke="#555550" stroke-width="1" marker-end="url(#arr)"/>
+  <text x="640" y="78" font-size="12" fill="#73726c" text-anchor="end">ビーム・SR の進行方向</text>
+
+  <path d="M40,52 Q70,88 130,110" fill="none" stroke="#888880" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="40" y="40" font-size="12" fill="#73726c">ビーム軌道（偏向部の弧）</text>
+  <circle cx="130" cy="110" r="3.5" fill="#BA7517"/>
+  <text x="142" y="104" font-size="14" font-weight="bold" fill="#3d3d3a">光源 = 接点</text>
+
+  <line x1="40" y1="240" x2="640" y2="240" stroke="#555550" stroke-width="2" opacity="0.75"/>
+  <text x="40" y="262" font-size="12" fill="#73726c">真空ダクトの内壁</text>
+
+  <polygon points="330,240 480,196 480,240" fill="#F0997B" opacity="0.9" stroke="#993C1D" stroke-width="0.8"/>
+  <text x="440" y="226" font-size="14" font-weight="bold" fill="#4A1B0C" text-anchor="middle">LM</text>
+
+  <line x1="130" y1="110" x2="330" y2="240" stroke="#E8A33D" stroke-width="1" opacity="0.5"/>
+  <line x1="130" y1="110" x2="480" y2="196" stroke="#E8A33D" stroke-width="1.6"/>
+  <line x1="480" y1="196" x2="640" y2="235.4" stroke="#E8A33D" stroke-width="1" stroke-dasharray="5 4" opacity="0.65"/>
+
+  <text x="200" y="190" font-size="12" fill="#73726c" text-anchor="middle">根元へ</text>
+  <text x="320" y="146" font-size="12" fill="#73726c" text-anchor="middle">頂点をかすめる光線</text>
+
+  <line x1="480" y1="196" x2="486" y2="178" stroke="#aaaaa4" stroke-width="0.6" stroke-dasharray="3 3"/>
+  <text x="490" y="172" font-size="12" fill="#73726c">頂点（最上点）</text>
+
+  <line x1="496" y1="203" x2="496" y2="237" stroke="#555550" stroke-width="1" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <text x="504" y="222" font-size="12" fill="#73726c">H（壁からの高さ）</text>
+
+  <line x1="480" y1="240" x2="640" y2="240" stroke="#1D9E75" stroke-width="3.5"/>
+  <text x="330" y="262" font-size="12" fill="#73726c" text-anchor="middle">面の根元（上流側・緩やか）</text>
+  <text x="560" y="284" font-size="12" fill="#0F6E56" text-anchor="middle">影 LS（保護範囲）</text>
+
+  <text x="640" y="304" font-size="12" fill="#73726c" text-anchor="end">※縦方向は誇張。下流端（H の辺）は急峻／垂直</text>
+</svg>

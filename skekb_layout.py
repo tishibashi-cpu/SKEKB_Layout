@@ -83,7 +83,10 @@ class Element:
     s: float           # IP からの経路長 [m]
     length: float      # 要素長 [m]
     value: float       # Value (偏向量など。符号でブロック向き反転判定に使う)
-    index: int         # 通し番号
+    chi1: float = 0.0  # OChi1 [deg] 水平面内の軌道方位角 (入口での値)
+    chi2: float = 0.0  # OChi2 [deg] 鉛直面内
+    chi3: float = 0.0  # OChi3 [deg] ロール
+    index: int = 0     # 通し番号
 
     # 導出される値
     mag_block: str = ""          # マグネット AutoCAD ブロック名
@@ -152,6 +155,9 @@ def parse_dispog(path: str | Path) -> list[Element]:
                         s=float(parts[4]),
                         length=float(parts[5]),
                         value=float(parts[6]),
+                        chi1=float(parts[7]),
+                        chi2=float(parts[8]),
+                        chi3=float(parts[9]),
                         index=int(parts[10]),
                     )
                 )
@@ -180,21 +186,28 @@ class MagnetBlockResolver:
 
     def __init__(self, ring: str):
         self.ring = ring
-        self.block_map: dict[str, str] = _load_json(f"{ring.lower()}_mag_blocks.json")
-        # 要素名 -> マグネットブロックの「正解」直接マップ (Lattice シートから抽出)。
-        # 複雑な BN 導出で取りこぼす特殊磁石 (QK*, ZV*, BW* 等) を要素名で直接引く。
+        # 統合 config: {ring}_magnets.json = {"by_element": {...}, "by_bn": {...}}
+        #   by_element … 要素名 -> ブロック名 (Lattice 由来の正解マップ。最優先)
+        #   by_bn      … BN(種別キー) -> ブロック名 (直マップに無い要素のフォールバック)
         try:
-            self.by_element: dict[str, str] = _load_json(
-                f"{ring.lower()}_mag_by_element.json")
+            merged = _load_json(f"{ring.lower()}_magnets.json")
+            self.by_element: dict[str, str] = merged.get("by_element", {})
+            self.block_map: dict[str, str] = merged.get("by_bn", {})
+            self._override_index: dict[str, list[tuple[str, str]]] = {}
         except FileNotFoundError:
-            self.by_element = {}
-        self.overrides = _load_overrides_csv(f"{ring.lower()}_mag_overrides.csv")
-        # element -> [(expect_bn, result_bn), ...]
-        self._override_index: dict[str, list[tuple[str, str]]] = {}
-        for r in self.overrides:
-            self._override_index.setdefault(r["element"], []).append(
-                (r["expect_bn"], r["result_bn"])
-            )
+            # 旧形式 (分割ファイル) との後方互換
+            self.block_map = _load_json(f"{ring.lower()}_mag_blocks.json")
+            try:
+                self.by_element = _load_json(f"{ring.lower()}_mag_by_element.json")
+            except FileNotFoundError:
+                self.by_element = {}
+            self._override_index = {}
+            try:
+                for r in _load_overrides_csv(f"{ring.lower()}_mag_overrides.csv"):
+                    self._override_index.setdefault(r["element"], []).append(
+                        (r["expect_bn"], r["result_bn"]))
+            except FileNotFoundError:
+                pass
         self._zv_rules = self._load_zv_rules()
 
     @staticmethod
@@ -422,7 +435,8 @@ def generate_clear_preamble(ring: str) -> list[str]:
 
 
 def generate_magnet_script(elements: list[Element], ring: str,
-                           clear_layers: bool = False) -> ConversionResult:
+                           clear_layers: bool = False,
+                           draw_bend_arcs: bool = False) -> ConversionResult:
     """
     マグネット配置用 AutoCAD スクリプト (.scr 内容) を生成する。
 
@@ -467,6 +481,8 @@ def generate_magnet_script(elements: list[Element], ring: str,
         f"_N {L['magnet_name']} _C {L['magnet_name_color']} {L['magnet_name']} "
     )
     out.append(f"_-LAYER _N {L['magnet']} _C {L['magnet_color']} {L['magnet']} ")
+    if draw_bend_arcs and L.get("bend_arc"):
+        out.append(f"_-LAYER _N {L['bend_arc']} _C {L['bend_arc_color']} {L['bend_arc']} ")
     out.append(f"PDMODE {SETTINGS['autocad']['point_mode']}")
     out.append(f"PDSIZE {SETTINGS['autocad']['point_size']}")
     out.append("_ZOOM _A")
@@ -477,14 +493,44 @@ def generate_magnet_script(elements: list[Element], ring: str,
     nmagblock0 = ""
     tn0 = tb0 = 0.0
     tvalue0 = 0.0
+    length0 = 0.0
     polyline: list[str] = []
     text_h = SETTINGS["text"]["magnet_name_height"]
     # QC1 / QC2 のサンプリングカウンタ (代表だけ名前を出す)
     iqc1 = iqc2 = 0
 
-    for el in elements:
+    for i, el in enumerate(elements):
         name = el.name
         x, y = el.x_mm, el.y_mm
+
+        # --- 偏向磁石の軌道円弧 (任意, OChi1 ベースで厳密に描く) ---
+        # dispog の各行は「要素入口」での軌道位置(x,y)と方位 OChi1[deg] を持つ。
+        # 連続する次要素の入口 = この磁石の出口。水平面内の方位変化
+        #   Δchi1 = chi1(次) - chi1(この要素)
+        # を含み角として、入口→出口を円弧で結ぶ (_ARC 始点 _E 終点 _A 含み角)。
+        # これで半径・接線・端点が厳密に再現される。垂直偏向は Δchi1≈0 のため
+        # 直線同然となり描かない (平面図では曲がらない)。分割された磁石も
+        # 各区間が正しい小弧になる。OChi1 を使うので向きの推定・反転が起きない。
+        dname = name.lstrip("-")
+        if draw_bend_arcs and dname[:1] == "B" and el.length > 0 \
+                and i + 1 < len(elements) and L.get("bend_arc"):
+            # 出口の行 = s ≒ 入口s + 磁石長 にある行 (磁石内部に軌道サンプル点が
+            # 挿入されている場合 (例 BS2FRP) でも全長を弧でカバーするため、
+            # 直後の行ではなく「出口」まで結ぶ)。通常は直後の行が出口。
+            s_exit = el.s + el.length
+            j = i + 1
+            while j + 1 < len(elements) and elements[j].s < s_exit - 1e-6:
+                j += 1
+            dchi = elements[j].chi1 - el.chi1         # 水平方位変化 [deg]
+            # OChi1 は ±180° で折り返すため、差を (-180,180] に正規化して
+            # 最短回転(=本来の偏向角)に直す。これをしないと ±180° をまたぐ磁石
+            # (BSWFRP, BX1E/BX2E, BSWFRE 等)で約±360°となり円が描かれてしまう。
+            dchi = (dchi + 180.0) % 360.0 - 180.0
+            if abs(dchi) > 1e-3:                      # 水平に曲がる場合のみ
+                x1, y1 = elements[j].x_mm, elements[j].y_mm
+                out.append(f"CLAYER {L['bend_arc']}")
+                out.append(f"_ARC {_fmt(x)},{_fmt(y)} _E {_fmt(x1)},{_fmt(y1)} "
+                           f"_A {_fmt(dchi)}")
 
         # 除外判定 (リング別):
         #   共通: 先頭 "P"、長さ0
@@ -555,6 +601,7 @@ def generate_magnet_script(elements: list[Element], ring: str,
         nelem0 = name
         nmagblock0 = el.mag_block
         tvalue0 = el.value
+        length0 = el.length
         polyline.append(f"{_fmt(x)},{_fmt(y)}")
 
     # 最後にビーム中心線を引く
@@ -577,7 +624,8 @@ def generate_magnet_script(elements: list[Element], ring: str,
 
 
 def generate_duct_script(elements: list[Element], ring: str,
-                         duct_resolver: "DuctBlockResolver") -> ConversionResult:
+                         duct_resolver: "DuctBlockResolver",
+                         lock_after: bool = False) -> ConversionResult:
     """
     ダクト(ビームパイプ)配置用 AutoCAD スクリプトを生成する。
 
@@ -636,6 +684,12 @@ def generate_duct_script(elements: list[Element], ring: str,
         tb1 = tb0
         tb0 = tb
 
+    if lock_after:
+        # 配置完了後、全画層をロックする (誤操作防止)。
+        out.append("_-LAYER")
+        out.append("_LOCK")
+        out.append("*")
+        out.append("")          # 空行 = Enter, LAYER コマンドを終了
     out.append("FILEDIA 1")
     return res
 
@@ -663,54 +717,64 @@ class DuctBlockResolver:
     """
     要素名 -> ダクトAutoCADブロック名リスト の解決器。
 
-    旧VBAの *InsertDuctBlockName は要素名から中間キー BN を作り、
-    *_DuctBlock テーブルで引いていた。BN生成規則が極めて多く、
-    かつラティス依存が強いため、本実装では「要素名そのもの」または
-    「マグネットブロックキー」から JSON 表を引く方式とし、規則追加は
-    config の編集で行えるようにしている。
+    統合 config {ring}_ducts.json は「要素名 -> 挿入するブロック名リスト」の
+    単一マップで、ブロック名は "_Or"(オーダー済み) も含む**最終名**。
+    書いてある名前がそのまま図面に挿入される (WYSIWYG)。ダクトの差し替えは
+    このファイルの該当行を書き換えるだけでよい。
+
+    (補足) 旧VBAの *InsertDuctBlockName は要素名から中間キー DuctBN を作り
+    *_DuctBlock テーブルで引いていたが、現行ラティスでは Lattice 由来の
+    直接マップが全要素をカバーしており、フォールバック表・"_Or"付与規則は
+    不要になったため廃止した (旧ファイルは config/legacy/ に保存)。
     """
 
     def __init__(self, ring: str):
         self.ring = ring
-        self.block_map: dict[str, list[str]] = _load_json(f"{ring.lower()}_duct_blocks.json")
-        # 要素名 -> ダクトブロックの「正解」直接マップ (Lattice シートから抽出)。
-        # 旧VBAの複雑な DuctBN 導出を再現する代わりに、実際に割り当てられた
-        # ブロックを要素名で直接引く (最も確実)。
         try:
+            # 統合形式 (最終ブロック名の直接マップ)
             self.by_element: dict[str, list[str]] = _load_json(
-                f"{ring.lower()}_duct_by_element.json")
+                f"{ring.lower()}_ducts.json")
+            self._legacy = False
+            self.block_map: dict[str, list[str]] = {}
+            self.ordered: set = set()
         except FileNotFoundError:
-            self.by_element = {}
-        # 「オーダー済み」ダクトブロックの集合 ("_Or" を付ける対象)
-        try:
-            self.ordered: set = set(_load_json(f"{ring.lower()}_duct_ordered.json"))
-        except FileNotFoundError:
-            self.ordered = set()
-        # マグネット側のキー導出も流用できるよう保持
-        self._mag = MagnetBlockResolver(ring)
+            # 旧形式 (分割ファイル) との後方互換
+            self._legacy = True
+            self.block_map = _load_json(f"{ring.lower()}_duct_blocks.json")
+            try:
+                self.by_element = _load_json(f"{ring.lower()}_duct_by_element.json")
+            except FileNotFoundError:
+                self.by_element = {}
+            try:
+                self.ordered = set(_load_json(f"{ring.lower()}_duct_ordered.json"))
+            except FileNotFoundError:
+                self.ordered = set()
+        # 旧形式の BN フォールバック用
+        self._mag = MagnetBlockResolver(ring) if self._legacy else None
 
     def _apply_ordered(self, blocks: list[str]) -> list[str]:
-        """オーダー済みブロックには "_Or" を付ける (旧VBAの挙動を再現)。"""
+        """(旧形式のみ) オーダー済みブロックには "_Or" を付ける。"""
         return [b + "_Or" if b in self.ordered else b for b in blocks]
 
     def resolve(self, el: Element) -> list[str]:
         # 要素名そのものと、先頭の "-"(反転印) を除いた名前の両方で試す。
-        # 正解マップ/DuctBN表のキーはダッシュ無しのため、-QLA4LP -> QLA4LP で引く。
         raw = el.name
         stripped = raw.lstrip("-")
         candidates = (raw, stripped) if raw != stripped else (raw,)
+        if not self._legacy:
+            for name in candidates:
+                if name in self.by_element:
+                    return list(self.by_element[name])
+            return []
+        # ---- 以下、旧形式のフォールバック解決 ----
         for name in candidates:
-            # 1) Lattice 由来の直接マップ (要素名そのもの) を最優先
             if name in self.by_element:
                 return self._apply_ordered(self.by_element[name])
-            # 2) DuctBN テーブルを要素名で引く
             if name in self.block_map:
                 return self._apply_ordered(self.block_map[name])
-            # 3) ドットを除いた要素名で DuctBN テーブルを引く (例 BLX4LP.1 -> BLX4LP1)
             nodot = name.replace(".", "")
             if nodot in self.block_map:
                 return self._apply_ordered(self.block_map[nodot])
-        # 4) マグネットBNキーで引く
         bn = self._mag.derive_bn(el)
         if bn in self.block_map:
             return self._apply_ordered(self.block_map[bn])
@@ -735,16 +799,19 @@ def _fmt(v: float) -> str:
 
 
 def convert_dispog_to_magnet_scr(dispog_path, scr_path, ring,
-                                 clear_layers=False) -> ConversionResult:
+                                 clear_layers=False,
+                                 draw_bend_arcs=False) -> ConversionResult:
     elements = parse_dispog(dispog_path)
-    result = generate_magnet_script(elements, ring, clear_layers=clear_layers)
+    result = generate_magnet_script(elements, ring, clear_layers=clear_layers,
+                                    draw_bend_arcs=draw_bend_arcs)
     Path(scr_path).write_text(result.text(), encoding="utf-8")
     return result
 
 
-def convert_dispog_to_duct_scr(dispog_path, scr_path, ring) -> ConversionResult:
+def convert_dispog_to_duct_scr(dispog_path, scr_path, ring,
+                               lock_after=False) -> ConversionResult:
     elements = parse_dispog(dispog_path)
     resolver = DuctBlockResolver(ring)
-    result = generate_duct_script(elements, ring, resolver)
+    result = generate_duct_script(elements, ring, resolver, lock_after=lock_after)
     Path(scr_path).write_text(result.text(), encoding="utf-8")
     return result

@@ -31,7 +31,9 @@
       "magnet_color": 233,
       "monitor": "hermonitor",
       "duct": "herduct",
-      "duct_color": 7
+      "duct_color": 7,
+      "bend_arc": "herorbitarc",
+      "bend_arc_color": 3
     },
     "element_suffix": "E",
     "label_offset": {
@@ -62,7 +64,9 @@
       "magnet_color": 6,
       "monitor": "lermonitor",
       "duct": "lerduct",
-      "duct_color": 7
+      "duct_color": 7,
+      "bend_arc": "lerorbitarc",
+      "bend_arc_color": 3
     },
     "element_suffix": "P",
     "label_offset": {

@@ -234,6 +234,36 @@ def extract_mag_others(xlsm_path: str):
         print(f"{ring} Mag Others -> {len(vals)} 行")
 
 
+def consolidate():
+    """
+    抽出した分割ファイルを統合形式にまとめる:
+      {ring}_ducts.json   … 要素名 -> 最終ブロック名リスト ("_Or" 焼き込み済み)
+      {ring}_magnets.json … {"by_element": ..., "by_bn": ...}
+    分割ファイル (旧形式) は config/legacy/ に退避する。
+    """
+    import shutil
+    legacy = CONFIG_DIR / "legacy"
+    legacy.mkdir(exist_ok=True)
+    for r in ("her", "ler"):
+        be = json.load(open(CONFIG_DIR / f"{r}_duct_by_element.json", encoding="utf-8"))
+        ordered = set(json.load(open(CONFIG_DIR / f"{r}_duct_ordered.json", encoding="utf-8")))
+        ducts = {k: [b + "_Or" if b in ordered else b for b in v] for k, v in be.items()}
+        _write_json(f"{r}_ducts.json", ducts)
+
+        mbe = json.load(open(CONFIG_DIR / f"{r}_mag_by_element.json", encoding="utf-8"))
+        mbn = json.load(open(CONFIG_DIR / f"{r}_mag_blocks.json", encoding="utf-8"))
+        _write_json(f"{r}_magnets.json", {"by_element": mbe, "by_bn": mbn})
+
+        for f in (f"{r}_duct_by_element.json", f"{r}_duct_blocks.json",
+                  f"{r}_duct_ordered.json", f"{r}_mag_by_element.json",
+                  f"{r}_mag_blocks.json", f"{r}_mag_overrides.csv"):
+            p = CONFIG_DIR / f
+            if p.exists():
+                shutil.move(str(p), str(legacy / f))
+        print(f"{r}: 統合 -> {r}_ducts.json ({len(ducts)}), "
+              f"{r}_magnets.json (by_element {len(mbe)} / by_bn {len(mbn)})")
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print(__doc__)
@@ -248,4 +278,5 @@ if __name__ == "__main__":
     extract_component_and_ducttype(xlsm)
     extract_mag_others(xlsm)
     extract_overrides(xlsm)
-    print("\nconfig/ を更新しました。")
+    consolidate()
+    print("\nconfig/ を更新しました (統合形式)。")
