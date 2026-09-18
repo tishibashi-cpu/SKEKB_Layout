@@ -31,7 +31,3 @@ Thumbs.db
 *.dispog
 *.dwg
 
-# 開発中
-synrad3d_wall.py
-config/wall_shapes.json
-

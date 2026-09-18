@@ -1,0 +1,707 @@
+! Converted from sler_v7.wall3d to the current Synrad3D format.
+!   stray 'synrad3d_wall' header namelist removed (it swallowed the first place)
+!   D02H4, D02V1, D06H3, D06H4 は頂点規則違反のため再構成（wall_shapes.json と同一）
+!   backwall サブチェンバと ABSORBER 面は未使用のため削除
+
+&place section = 0.000000, "D-IP1LP", "f20-1" /
+&place section = 1.091976, "D-IP1LP", "f20-2" /
+&place section = 1.171976, "D-IP1LP", "f28" /
+&place section = 1.251976, "D-IP1LP", "f44" /
+&place section = 1.589976, "D-IP1LP", "f44" /
+&place section = 1.629976, "D-IP1LP", "f46" /
+&place section = 1.749976, "D-IP1LP", "f70" /
+&place section = 2.349976, "D-IP1LP", "f70" /
+&place section = 2.399976, "D-IP1LP", "f80" /
+&place section = 16.610000, "DTTtig2305aP_in", "f80" /
+&place section = 19.089000, "DTTtig2305aP_out", "f90" /
+&place section = 34.760000, "DTTir1190aP_in", "f90" /
+&place section = 36.149000, "DTTir1190aP_out", "f90x220_Ar" /
+&place section = 60.670000, "DTTt0878aP_in", "f90x220_Ar" /
+&place section = 61.719000, "DTTt0878aP_out", "f90" /
+&place section = 67.230000, "DQX1941uP_in", "f90" /
+&place section = 68.709000, "DQX1941uP_out", "f90x220_Ar" /
+&place section = 116.300000, "DBTc2800aP_in", "f90x220_Ar" /
+&place section = 119.839000, "DBTc2800aP_out", "f90" /
+&place section = 126.240000, "DTT1075aP_in", "f90" /
+&place section = 127.509000, "DTT1075aP_out", "f90x220_Ar" /
+&place section = 658.709000, "DQA1961dP_out", "f90x220_Ar" /
+&place section = 658.710000, "DBW1510uP_in", "f90x220_St" /
+&place section = 873.879000, "DSWir2390aP_out", "f90x220_St" /
+&place section = 873.880000, "DQAb1826uP_in", "f90x220_Ar" /
+&place section = 1408.820000, "DTF0200aP_in", "f90x220_Ar" /
+&place section = 1409.219000, "DTF0200aP_out", "f90x220H24" /
+&place section = 1427.889000, "DSFi1083aP_out", "f90x220H24" /
+&place section = 1427.890000, "DTF0200fP_in", "f90x220_Ar" /
+&place section = 1428.089000, "DTF0200fP_out", "f90x220_Ar" /
+&place section = 1428.090000, "DTF1860aP_in", "f90x220_St" /
+&place section = 1430.149000, "DTF1860aP_out", "f150" /
+&place section = 1487.070000, "DTF1360aP_in", "f150" /
+&place section = 1488.429000, "DTF1360aP_out", "f94" /
+&place section = 1499.680000, "DTFm0780fP_in", "f94" /
+&place section = 1500.619000, "DTFm0780fP_out", "f64" /
+&place section = 1519.140000, "DTFm0780gP_in", "f64" /
+&place section = 1520.079000, "DTFm0780gP_out", "f94" /
+&place section = 1528.840000, "DTF0242fP_in", "f94" /
+&place section = 1529.079000, "DTF0242fP_out", "f110" /
+&place section = 1531.340000, "DTF0242gP_in", "f110" /
+&place section = 1531.739000, "DTF0242gP_out", "f94" /
+&place section = 1531.850000, "DTF1360gP_in", "f94" /
+&place section = 1533.409000, "DTF1360gP_out", "f150" /
+&place section = 1576.240000, "DTF1080aP_in", "f150" /
+&place section = 1577.319000, "DTF1080aP_out", "f94" /
+&place section = 1584.460000, "DTF0503aP_in", "f94" /
+&place section = 1584.959000, "DTF0503aP_out", "60x40" /
+&place section = 1613.320000, "DTFi0572aP_in", "60x40" /
+&place section = 1614.049000, "DTFi0572aP_out", "76x48" /
+&place section = 1615.770000, "DTA0250aP_in", "76x48" /
+&place section = 1616.019000, "DTA0250aP_out", "f80" /
+&place section = 1616.220000, "DTAg0306aP_in", "f80" /
+&place section = 1616.519000, "DTAg0306aP_out", "f90x220_Ar" /
+&place section = 1626.790000, "DTAi1368aP_in", "f90x220_Ar" /
+&place section = 1628.329000, "DTAi1368aP_out", "122x50" /
+&place section = 1629.600000, "DSAabt3440aP_in", "122x50" /
+&place section = 1633.219000, "DSAabt3440aP_out", "f90" /
+&place section = 1633.220000, "DQA2030dP_in", "f90" /
+&place section = 1635.749000, "DQA2030dP_out", "f90x220_Ar" /
+
+&place section = 1787.72959, "D06H3_in", "f90x220_Ar" /
+&place section = 1788.01699, "D06H3_tip", "D06H3" /
+&place section = 1788.02699, "D06H3_tip", "D06H3" /
+&place section = 1788.31439, "D06H3_out", "f90x220_Ar" /
+
+&place section = 1816.50742 "D06H4_in", "f90x220_Ar" /
+&place section = 1816.79482, "D06H4_tip", "D06H4" /
+&place section = 1816.80482, "D06H4_tip", "D06H4" /
+&place section = 1817.09222, "D06H4_out", "f90x220_Ar" /
+
+&place section = 2173.790000, "DTOg1860aP_in", "f90x220_Ar" /
+&place section = 2175.849000, "DTOg1860aP_out", "f150" /
+&place section = 2209.650000, "DTOg1860fP_in", "f150" /
+&place section = 2211.709000, "DTOg1860fP_out", "f90x220_Ar" /
+&place section = 2215.209000, "DSAi3302aP_out", "f90x220_Ar" /
+&place section = 2215.210000, "DQWirh1486dP_in", "f90x220_St" /
+&place section = 2381.429000, "DSWir2390aP_out", "f90x220_St" /
+&place section = 2381.430000, "DQAb1826uP_in", "f90x220_Ar" /
+
+&place section = 2934.1376, "D02V1_in", "f90x220_Ar" /
+&place section = 2934.4250, "D02V1_tip", "D02V1" /
+&place section = 2934.4350, "D02V1_tip", "D02V1" /
+&place section = 2934.7224, "D02V1_out", "f90x220_Ar" /
+
+&place section = 2947.15261, "D02H3_in", "f90x220_Ar" /
+&place section = 2947.44001, "D02H3_tip", "D02H3" /
+&place section = 2947.45001, "D02H3_tip", "D02H3" /
+&place section = 2947.73741, "D02H3_out", "f90x220_Ar" /
+
+&place section = 2982.610000, "DTTctir1097aP_in", "f90x220_Ar" /
+&place section = 2983.870000, "DTTctir1097aP_out", "f90" /
+
+&place section = 3000.71415, "D02H4_in", "f90" /
+&place section = 3001.00155, "D02H4_tip", "D02H4" /
+&place section = 3001.01155, "D02H4_tip", "D02H4" /
+&place section = 3001.29895, "D02H4_out", "f90" /
+
+&place section = 3001.931000, "DTTcg0300aP_in", "f90" /
+&place section = 3002.430000, "DTTcg0300aP_out", "f80" /
+&place section = 3013.581000, "D-IP1RP", "f80" /
+&place section = 3013.631000, "D-IP1RP", "f70" /
+&place section = 3014.556000, "D-IP1RP", "f70" /
+&place section = 3014.676000, "D-IP1RP", "f46" /
+&place section = 3014.716000, "D-IP1RP", "f44" /
+&place section = 3015.054000, "D-IP1RP", "f44" /
+&place section = 3015.134000, "D-IP1RP", "f28" /
+&place section = 3015.214000, "D-IP1RP", "f21" /
+&place section = 3015.690000, "D-IP1RP", "f21" /
+&place section = 3015.691000, "D-IP1RP", "f20-1" /
+&place section = 3015.823500, "D-IP1RP", "f20-2" /
+&place section = 3015.853500, "D-IP1RP", "f20-1" /
+&place section = 3015.854500, "D-IP1RP", "f19_96" /
+&place section = 3015.859500, "D-IP1RP", "f20_70" /
+&place section = 3015.864500, "D-IP1RP", "f19_54" /
+&place section = 3015.869500, "D-IP1RP", "f20_26" /
+&place section = 3015.874500, "D-IP1RP", "f19_10" /
+&place section = 3015.879500, "D-IP1RP", "f19_84" /
+&place section = 3015.884500, "D-IP1RP", "f18_66" /
+&place section = 3015.889500, "D-IP1RP", "f19_44" /
+&place section = 3015.894500, "D-IP1RP", "f18_24" /
+&place section = 3015.899500, "D-IP1RP", "f19" /
+&place section = 3015.904500, "D-IP1RP", "f17_80" /
+&place section = 3015.909500, "D-IP1RP", "f18_56" /
+&place section = 3015.914500, "D-IP1RP", "f17_36" /
+&place section = 3015.919500, "D-IP1RP", "f18_10" /
+&place section = 3015.924500, "D-IP1RP", "f16_94" /
+&place section = 3015.929500, "D-IP1RP", "f17_70" /
+&place section = 3015.934500, "D-IP1RP", "f16_50" /
+&place section = 3015.939500, "D-IP1RP", "f17_28" /
+&place section = 3015.944500, "D-IP1RP", "f16_08" /
+&place section = 3015.949500, "D-IP1RP", "f16_82" /
+&place section = 3015.954500, "D-IP1RP", "f15_64" /
+&place section = 3015.959500, "D-IP1RP", "f16_42" /
+&place section = 3015.964500, "D-IP1RP", "f15_22" /
+&place section = 3015.969500, "D-IP1RP", "f15_98" /
+&place section = 3015.974500, "D-IP1RP", "f14_80" /
+&place section = 3015.979500, "D-IP1RP", "f15_54" /
+&place section = 3015.984500, "D-IP1RP", "f14_36" /
+&place section = 3015.989500, "D-IP1RP", "f15_12" /
+&place section = 3015.994500, "D-IP1RP", "f13_92" /
+&place section = 3015.999500, "D-IP1RP", "f14_66" /
+&place section = 3016.004500, "D-IP1RP", "f13_50" /
+&place section = 3016.009500, "D-IP1RP", "f14_22" /
+&place section = 3016.014500, "D-IP1RP", "f13" /
+&place section = 3016.019500, "D-IP1RP", "f13_82" /
+&place section = 3016.024500, "D-IP1RP", "f12_62" /
+&place section = 3016.029500, "D-IP1RP", "f13_40" /
+&place section = 3016.034500, "D-IP1RP", "f12_20" /
+&place section = 3016.039500, "D-IP1RP", "f12_96" /
+&place section = 3016.044500, "D-IP1RP", "f11_76" /
+&place section = 3016.049500, "D-IP1RP", "f12_50" /
+&place section = 3016.054500, "D-IP1RP", "f11_34" /
+&place section = 3016.059500, "D-IP1RP", "f12_10" /
+&place section = 3016.064500, "D-IP1RP", "f10_90" /
+&place section = 3016.069500, "D-IP1RP", "f11_66" /
+&place section = 3016.074500, "D-IP1RP", "f10_48" /
+&place section = 3016.079500, "D-IP1RP", "f11_22" /
+&place section = 3016.084500, "D-IP1RP", "f10_04" /
+&place section = 3016.085500, "D-IP1RP", "f10" /
+&place section = 3016.102200, "D-IP1RP", "f10" /
+&place section = 3016.102210, "D-IP1RP", "f20-1" /
+&place section = 3016.306000, "D-IP1RP", "f20-2" /
+
+&shape_def
+  name = "122x50"
+  v(  1) =  0.0610, 0.0000
+  v(  2) =  0.0360, 0.0250, 0.0250
+  v(  3) =  0.0000, 0.0250
+/
+
+&shape_def
+  name = "f90"
+  v(  1) =  0.0450, 0.0000
+  v(  2) =  0.0000, 0.0450, 0.0450
+/
+
+&shape_def
+  name = "60x40"
+  v(  1) =  0.0300, 0.0000
+  v(  2) =  0.0100, 0.0200, 0.0200
+  v(  3) =  0.0000, 0.0200
+/
+
+&shape_def
+  name = "76x48"
+  v(  1) =  0.0380, 0.0000
+  v(  2) =  0.0140, 0.0240, 0.0240
+  v(  3) =  0.0000, 0.0240
+/
+
+&shape_def
+  name = "f80"
+  v(  1) =  0.0400, 0.0000
+  v(  2) =  0.0000, 0.0400, 0.0400
+/
+
+&shape_def
+  name = "f110"
+  v(  1) =  0.0550, 0.0000
+  v(  2) =  0.0000, 0.0550, 0.0550
+/
+
+&shape_def
+  name = "f94"
+  v(  1) =  0.0470, 0.0000
+  v(  2) =  0.0000, 0.0470, 0.0470
+/
+
+&shape_def
+  name = "f150"
+  v(  1) =  0.0750, 0.0000
+  v(  2) =  0.0000, 0.0750, 0.0750
+/
+
+&shape_def
+  name = "f90x220_Ar"
+  v(  1) =   0.1100, 0.0000
+  v(  2) =   0.1100, 0.0028
+  v(  3) =   0.1058, 0.0070, 0.0042
+  v(  4) =   0.0565, 0.0070
+  v(  5) =   0.04168, 0.01697, -0.016
+  v(  6) =   0.0000, 0.0450, 0.045
+  v(  7) =  -0.04168, 0.01697, 0.045
+  v(  8) =  -0.0565, 0.0070, -0.016
+  v(  9) = -0.0618, 0.0070
+  v(  10) = -0.066, 0.0028, 0.0042
+  v(  11) = -0.066, 0.0000
+/
+ 
+
+
+&shape_def
+  name = "f64"
+  v(  1) =  0.0320, 0.0000
+  v(  2) =  0.0000, 0.0320, 0.0320
+/
+
+&shape_def
+  name = "f90x220H24"
+  v(  1) =   0.1100, 0.0000
+  v(  2) =   0.1100, 0.0078
+  v(  3) =   0.1058, 0.0120, 0.0042
+  v(  4) =   0.05419, 0.0120
+  v(  5) =   0.03998, 0.02066, -0.016
+  v(  6) =   0.0000, 0.0450, 0.0450
+/
+
+&shape_def
+  name = "f90x220_St"
+  v(  1) =   0.1100, 0.0000
+  v(  2) =   0.1100, 0.0028
+  v(  3) =   0.1058, 0.0070, 0.0042
+  v(  4) =   0.0565, 0.0070
+  v(  5) =   0.04168, 0.01697, -0.016
+  v(  6) =   0.0000, 0.0450, 0.045
+/
+
+&shape_def
+  name = "f94x220H24"
+  v(  1) =   0.1100, 0.0000
+  v(  2) =   0.1100, 0.0078
+  v(  3) =   0.1058, 0.0120, 0.0042
+  v(  4) =   0.05644, 0.0120
+  v(  5) =   0.0421, 0.02089, -0.016
+  v(  6) =   0.0000, 0.0470, 0.0470
+/
+
+&shape_def
+  name = "104x50"
+  v(  1) =  0.0520, 0.0000
+  v(  2) =  0.0270, 0.0250, 0.0250
+  v(  3) =  0.0000, 0.0250
+/
+
+&shape_def
+  name = "65x48"
+  v(  1) =  0.0325, 0.0000
+  v(  2) =  0.0085, 0.0240, 0.0240
+  v(  3) =  0.0000, 0.0240
+/
+
+&shape_def
+  name = "f50x190_Ar"
+  v(  1) =   0.0950, 0.0000
+  v(  2) =   0.0950, 0.0028
+  v(  3) =   0.0908, 0.0070, 0.0042
+  v(  4) =   0.03394, 0.0070
+  v(  5) =   0.0207, 0.01421, -0.016
+  v(  6) =   0.0000, 0.0250, 0.025
+  v(  7) =  -0.0207, 0.01421, 0.025
+  v(  8) =  -0.03394, 0.0070, -0.016
+  v(  9) = -0.0618, 0.0070
+  v(  10) = -0.066, 0.0028, 0.0042
+  v(  11) = -0.066, 0.0000
+/
+
+&shape_def
+  name = "f104"
+  v(  1) =  0.0520, 0.0000
+  v(  2) =  0.0000, 0.0520, 0.0520
+/
+
+&shape_def
+  name = "f80x220_Ar"
+  v(  1) =   0.1100, 0.0000
+  v(  2) =   0.1100, 0.0028
+  v(  3) =   0.1058, 0.0070, 0.0042
+  v(  4) =   0.05106, 0.0070
+  v(  5) =   0.03647, 0.01643, -0.016
+  v(  6) =   0.0000, 0.0400, 0.040
+  v(  7) =  -0.03647, 0.01643, 0.040
+  v(  8) =  -0.05106, 0.0070, -0.016
+  v(  9) = -0.0618, 0.0070
+  v(  10) = -0.066, 0.0028, 0.0042
+  v(  11) = -0.066, 0.0000
+/
+
+&shape_def
+  name = "f50x190_Ar_Sp"
+  v(  1) =   0.0950, 0.0000
+  v(  2) =   0.0950, 0.0028
+  v(  3) =   0.0908, 0.0070, 0.0042
+  v(  4) =   0.03394, 0.0070
+  v(  5) =   0.0207, 0.01421, -0.016
+  v(  6) =   0.0000, 0.0250, 0.025
+  v(  7) =  -0.0207, 0.01421, 0.025
+  v(  8) =  -0.03394, 0.0070, -0.016
+  v(  9) = -0.0708, 0.0070
+  v(  10) = -0.075, 0.0028, 0.0042
+  v(  11) = -0.075, 0.0000
+/
+
+&shape_def
+  name = "f20-1"
+  v(  1) =  0.0100, 0.0000
+  v(  2) =  0.0000, 0.0100, 0.0100
+/
+
+&shape_def
+  name = "f10"
+  v(  1) =  0.005, 0.0000
+  v(  2) =  0.0000, 0.005, 0.005
+/
+
+&shape_def
+  name = "f20-2"
+  v(  1) =  0.0100, 0.0000
+  v(  2) =  0.0000, 0.0100, 0.0100
+/
+
+&shape_def
+  name = "f28"
+  v(  1) =  0.0140, 0.0000
+  v(  2) =  0.0000, 0.0140, 0.0140
+/
+
+&shape_def
+  name = "f44"
+  v(  1) =  0.0220, 0.0000
+  v(  2) =  0.0000, 0.0220, 0.0220
+/
+
+&shape_def
+  name = "f46"
+  v(  1) =  0.0230, 0.0000
+  v(  2) =  0.0000, 0.0230, 0.0230
+/
+
+&shape_def
+  name = "f70"
+  v(  1) =  0.0350, 0.0000
+  v(  2) =  0.0000, 0.0350, 0.0350
+/
+
+&shape_def
+  name = "f21"
+  v(  1) =  0.0105, 0.0000
+  v(  2) =  0.0000, 0.0105, 0.0105
+/
+
+&shape_def
+  name = "f19_96"
+  v(  1) =  0.00998, 0.0000
+  v(  2) =  0.0000, 0.00998, 0.00998
+/
+
+&shape_def
+  name = "f20_70"
+  v(  1) =  0.01035, 0.0000
+  v(  2) =  0.0000, 0.01035, 0.01035
+/
+
+&shape_def
+  name = "f19_54"
+  v(  1) =  0.00977, 0.0000
+  v(  2) =  0.0000, 0.00977, 0.00977
+/
+
+&shape_def
+  name = "f20_26"
+  v(  1) =  0.01013, 0.0000
+  v(  2) =  0.0000, 0.01013, 0.01013
+/
+
+&shape_def
+  name = "f19_10"
+  v(  1) =  0.00955, 0.0000
+  v(  2) =  0.0000, 0.00955, 0.00955
+/
+
+&shape_def
+  name = "f19_84"
+  v(  1) =  0.00992, 0.0000
+  v(  2) =  0.0000, 0.00992, 0.00992
+/
+
+&shape_def
+  name = "f18_66"
+  v(  1) =  0.00933, 0.0000
+  v(  2) =  0.0000, 0.00933, 0.00933
+/
+
+&shape_def
+  name = "f19_44"
+  v(  1) =  0.00972, 0.0000
+  v(  2) =  0.0000, 0.00972, 0.00972
+/
+
+&shape_def
+  name = "f18_24"
+  v(  1) =  0.00912, 0.0000
+  v(  2) =  0.0000, 0.00912, 0.00912
+/
+
+&shape_def
+  name = "f19"
+  v(  1) =  0.0095, 0.0000
+  v(  2) =  0.0000, 0.0095, 0.0095
+/
+
+&shape_def
+  name = "f17_80"
+  v(  1) =  0.00890, 0.0000
+  v(  2) =  0.0000, 0.00890, 0.00890
+/
+
+&shape_def
+  name = "f18_56"
+  v(  1) =  0.00928, 0.0000
+  v(  2) =  0.0000, 0.00928, 0.00928
+/
+
+&shape_def
+  name = "f17_36"
+  v(  1) =  0.00868, 0.0000
+  v(  2) =  0.0000, 0.00868, 0.00868
+/
+
+&shape_def
+  name = "f18_10"
+  v(  1) =  0.00905, 0.0000
+  v(  2) =  0.0000, 0.00905, 0.00905
+/
+
+&shape_def
+  name = "f16_94"
+  v(  1) =  0.00847, 0.0000
+  v(  2) =  0.0000, 0.00847, 0.00847
+/
+
+&shape_def
+  name = "f17_70"
+  v(  1) =  0.00885, 0.0000
+  v(  2) =  0.0000, 0.00885, 0.00885
+/
+
+&shape_def
+  name = "f16_50"
+  v(  1) =  0.00825, 0.0000
+  v(  2) =  0.0000, 0.00825, 0.00825
+/
+
+&shape_def
+  name = "f17_28"
+  v(  1) =  0.00864, 0.0000
+  v(  2) =  0.0000, 0.00864, 0.00864
+/
+
+&shape_def
+  name = "f16_08"
+  v(  1) =  0.00804, 0.0000
+  v(  2) =  0.0000, 0.00804, 0.00804
+/
+
+&shape_def
+  name = "f16_82"
+  v(  1) =  0.00841, 0.0000
+  v(  2) =  0.0000, 0.00841, 0.00841
+/
+
+&shape_def
+  name = "f15_64"
+  v(  1) =  0.00782, 0.0000
+  v(  2) =  0.0000, 0.00782, 0.00782
+/
+
+&shape_def
+  name = "f16_42"
+  v(  1) =  0.00821, 0.0000
+  v(  2) =  0.0000, 0.00821, 0.00821
+/
+
+&shape_def
+  name = "f15_22"
+  v(  1) =  0.00761, 0.0000
+  v(  2) =  0.0000, 0.00761, 0.00761
+/
+
+&shape_def
+  name = "f15_98"
+  v(  1) =  0.00799, 0.0000
+  v(  2) =  0.0000, 0.00799, 0.00799
+/
+
+&shape_def
+  name = "f14_80"
+  v(  1) =  0.00740, 0.0000
+  v(  2) =  0.0000, 0.00740, 0.00740
+/
+
+&shape_def
+  name = "f15_54"
+  v(  1) =  0.00777, 0.0000
+  v(  2) =  0.0000, 0.00777, 0.00777
+/
+
+&shape_def
+  name = "f14_36"
+  v(  1) =  0.00718, 0.0000
+  v(  2) =  0.0000, 0.00718, 0.00718
+/
+
+&shape_def
+  name = "f15_12"
+  v(  1) =  0.00756, 0.0000
+  v(  2) =  0.0000, 0.00756, 0.00756
+/
+
+&shape_def
+  name = "f13_92"
+  v(  1) =  0.00696, 0.0000
+  v(  2) =  0.0000, 0.00696, 0.00696
+/
+
+&shape_def
+  name = "f14_66"
+  v(  1) =  0.00733, 0.0000
+  v(  2) =  0.0000, 0.00733, 0.00733
+/
+
+&shape_def
+  name = "f13_50"
+  v(  1) =  0.00675, 0.0000
+  v(  2) =  0.0000, 0.00675, 0.00675
+/
+
+&shape_def
+  name = "f14_22"
+  v(  1) =  0.00711, 0.0000
+  v(  2) =  0.0000, 0.00711, 0.00711
+/
+
+&shape_def
+  name = "f13"
+  v(  1) =  0.00650, 0.0000
+  v(  2) =  0.0000, 0.00650, 0.00650
+/
+
+&shape_def
+  name = "f13_82"
+  v(  1) =  0.00691, 0.0000
+  v(  2) =  0.0000, 0.00691, 0.00691
+/
+
+&shape_def
+  name = "f12_62"
+  v(  1) =  0.00631, 0.0000
+  v(  2) =  0.0000, 0.00631, 0.00631
+/
+
+&shape_def
+  name = "f13_40"
+  v(  1) =  0.00670, 0.0000
+  v(  2) =  0.0000, 0.00670, 0.00670
+/
+
+&shape_def
+  name = "f12_20"
+  v(  1) =  0.00610, 0.0000
+  v(  2) =  0.0000, 0.00610, 0.00610
+/
+
+&shape_def
+  name = "f12_96"
+  v(  1) =  0.00648, 0.0000
+  v(  2) =  0.0000, 0.00648, 0.00648
+/
+
+&shape_def
+  name = "f11_76"
+  v(  1) =  0.00588, 0.0000
+  v(  2) =  0.0000, 0.00588, 0.00588
+/
+
+&shape_def
+  name = "f12_50"
+  v(  1) =  0.00625, 0.0000
+  v(  2) =  0.0000, 0.00625, 0.00625
+/
+
+&shape_def
+  name = "f11_34"
+  v(  1) =  0.00567, 0.0000
+  v(  2) =  0.0000, 0.00567, 0.00567
+/
+
+&shape_def
+  name = "f12_10"
+  v(  1) =  0.00605, 0.0000
+  v(  2) =  0.0000, 0.00605, 0.00605
+/
+
+&shape_def
+  name = "f10_90"
+  v(  1) =  0.00545, 0.0000
+  v(  2) =  0.0000, 0.00545, 0.00545
+/
+
+&shape_def
+  name = "f11_66"
+  v(  1) =  0.00583, 0.0000
+  v(  2) =  0.0000, 0.00583, 0.00583
+/
+
+&shape_def
+  name = "f10_48"
+  v(  1) =  0.00524, 0.0000
+  v(  2) =  0.0000, 0.00524, 0.00524
+/
+
+&shape_def
+  name = "f11_22"
+  v(  1) =  0.00561, 0.0000
+  v(  2) =  0.0000, 0.00561, 0.00561
+/
+
+&shape_def
+  name = "f10_04"
+  v(  1) =  0.00502, 0.0000
+  v(  2) =  0.0000, 0.00502, 0.00502
+/
+
+&shape_def   ! 旧形状は θ 非単調のため再構成
+  name = "D06H3"
+  v(1) = 0.0115, 0
+  v(2) = 0.0115, 0.007071
+  v(3) = 0, 0.0135, 0.0135
+/
+
+&shape_def   ! 旧形状は θ 非単調のため再構成
+  name = "D06H4"
+  v(1) = 0.011, 0
+  v(2) = 0.011, 0.007826
+  v(3) = 0, 0.0135, 0.0135
+/
+
+&shape_def   ! 近似形状: 要確認
+  name = "D02V1"
+  v(1) = 0.04, 0
+  v(2) = 0.04, 0.007
+  v(3) = 0.007, 0.007
+  v(4) = 0, 0.0025
+/
+
+&shape_def
+  name = "D02H3"
+  v(  1) =   0.0190, 0.0000
+  v(  2) =   0.0190, 0.0070
+  v(  3) =   0.011543, 0.0070
+  v(  4) =   0.0000, 0.0135, 0.0135
+  v(  5) =  -0.011543, 0.0070, 0.0135
+  v(  6) =  -0.0190, 0.0070
+  v(  7) =  -0.0190, 0.0000
+/
+
+&shape_def   ! 旧形状は θ 非単調のため再構成
+  name = "D02H4"
+  v(1) = 0.0095, 0
+  v(2) = 0.0095, 0.009592
+  v(3) = 0, 0.0135, 0.0135
+/

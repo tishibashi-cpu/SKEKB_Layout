@@ -1,0 +1,169 @@
+{
+  "_README": "s を指定して断面を差し込む台帳。wall_shapes.json が『型番の諸元（断面コード→形状、重複なし）』なのに対し、こちらは『設置の一覧（同じ形状が何か所にも現れる）』。Duct_Type と Component の関係と同じ多対一の分割で、リングごとに 1 ファイル。",
+  "_fields": {
+    "name": "この差し込みの呼び名（ログとファイル冒頭のコメントに出る）",
+    "shape": "wall_shapes.json の断面コード、または自動生成できるコード（f90, 104x50 など）",
+    "s": "配置位置 [m]。単一値なら 1 点、[s0, s1] なら区間の両端に同じ断面を置く",
+    "profile": "CSV から連続プロファイルを読む場合（shape の代わり）",
+    "replace": "true（既定）なら、その s 範囲にある自動生成断面を取り除いてから差し込む",
+    "guard": "区間の外側 guard [m] の位置に、もとの断面をもう一度置いて補間のにじみを止める",
+    "disabled": "true にすると、その行を消さずに無効化できる",
+    "s_center / length": "コリメータ先端のように『中心 s と先端部の長さ L』で指定する書き方。s = s_center ± L/2 に同じ断面を置く（s の代わりに使う）"
+  },
+  "_profile_fields": {
+    "file": "config/ からの相対パス",
+    "s_column / width_column / height_column": "列番号（0 始まり）",
+    "s_scale / s_offset / s_origin / s_direction": "s = s_origin + s_direction * (生値 * s_scale + s_offset)",
+    "size_scale": "開口の生値 → mm の係数。列は水平全幅・垂直全幅で、等しければ円、違えば楕円になる"
+  },
+  "_collimator_params": "collimator_params: コリメータごとの length（先端部の長さ [m]）と guard（補間を止める距離 [m]）。--update-collimators が参照する。優先順位は collimator_params[コード] > コマンドラインの --length/--guard > 台帳に既にある値 > _default > 0.010 / 0.30。",
+  "collimator_params": {
+    "_default": {
+      "length": 0.01,
+      "guard": 0.3
+    },
+    "D06H3": {
+      "length": 0.16
+    }
+  },
+  "inserts": [
+    {
+      "name": "IR left (QCSLP)",
+      "profile": {
+        "file": "wall_profiles/QCSLP.csv",
+        "s_column": 0,
+        "width_column": 1,
+        "height_column": 2,
+        "s_scale": 0.001,
+        "s_offset": 0.5100004256791676,
+        "s_origin": 0.0,
+        "s_direction": 1,
+        "size_scale": 1.0
+      },
+      "replace": true,
+      "guard": 0.0
+    },
+    {
+      "name": "IR right (QCSRP)",
+      "profile": {
+        "file": "wall_profiles/QCSRP.csv",
+        "s_column": 0,
+        "width_column": 1,
+        "height_column": 2,
+        "s_scale": 0.001,
+        "s_offset": 0.4985012834226,
+        "s_origin": 3016.315,
+        "s_direction": -1,
+        "size_scale": 1.0
+      },
+      "replace": true,
+      "guard": 0.0
+    },
+    {
+      "name": "IR right ridge",
+      "ridge": {
+        "s_start": 3015.854,
+        "s_end": 3016.084,
+        "pitch_mm": 10.0,
+        "shape": "sawtooth",
+        "crest_width_mm": 0.0,
+        "flank_mm": 0.0,
+        "height_mm": 0.467,
+        "base_d_start_mm": 20.97,
+        "base_d_end_mm": 10.94,
+        "round_mm": 0.01,
+        "start_with": "crest"
+      },
+      "replace": true,
+      "_note": "旧 wall file の 47 断面を最小二乗で当てはめたパラメータ（ピッチ 10.0 mm・山から開始・山の高さ 0.468 mm・ベース径 21.02→10.89 mm）。IP 手前の絞りで、上流からの放射光を散乱させて衝突点チェンバに入れないための構造。"
+    },
+    {
+      "name": "D06H3",
+      "shape": "D06H3",
+      "s_center": 1788.021993,
+      "length": 0.16,
+      "guard": 0.3
+    },
+    {
+      "name": "D06H4",
+      "shape": "D06H4",
+      "s_center": 1816.889739,
+      "length": 0.01,
+      "guard": 0.3
+    },
+    {
+      "name": "D02H3",
+      "shape": "D02H3",
+      "s_center": 2947.445015,
+      "length": 0.01,
+      "guard": 0.3
+    },
+    {
+      "name": "D02H4",
+      "shape": "D02H4",
+      "s_center": 3000.424746,
+      "length": 0.01,
+      "guard": 0.3
+    },
+    {
+      "name": "D02V1",
+      "shape": "D02V1",
+      "s_center": 2930.47208,
+      "length": 0.01,
+      "guard": 0.3
+    },
+    {
+      "name": "D03V4",
+      "shape": "D03V4",
+      "s_center": 2546.910248,
+      "length": 0.01,
+      "guard": 0.3
+    },
+    {
+      "name": "D05V1",
+      "shape": "D05V1",
+      "s_center": 2236.935116,
+      "length": 0.01,
+      "guard": 0.3
+    },
+    {
+      "name": "D06V1",
+      "shape": "D06V1",
+      "s_center": 1870.268286,
+      "length": 0.01,
+      "guard": 0.3
+    },
+    {
+      "name": "D02H1",
+      "shape": "D02H1",
+      "s_center": 2872.967605,
+      "length": 0.01,
+      "guard": 0.3
+    },
+    {
+      "name": "D02H2",
+      "shape": "D02H2",
+      "s_center": 2895.904929,
+      "length": 0.01,
+      "guard": 0.3
+    },
+    {
+      "name": "D03H1",
+      "shape": "D03H1",
+      "s_center": 2616.981375,
+      "length": 0.01,
+      "guard": 0.3
+    }
+  ],
+  "_ridge_fields": {
+    "s_start / s_end": "リッジ構造の始まりと終わり [m]",
+    "pitch_mm": "山のピッチ（長手方向の繰り返し間隔）",
+    "shape": "sawtooth = 1周期2断面の三角波 / trapezoid = 1周期4断面の台形",
+    "crest_width_mm": "山の頂上の長手方向の幅（trapezoid のとき）",
+    "flank_mm": "山の斜面の長手方向の長さ（trapezoid のとき。0 なら 0.01 mm）",
+    "height_mm": "山の高さ（管内面から頂点まで、半径方向）。負にすると溝になる",
+    "base_d_start_mm / base_d_end_mm": "ベース管の内径 [mm]。s_start → s_end で線形テーパー。end を省くと一定径",
+    "round_mm": "径の丸め [mm]（既定 0.01）",
+    "start_with": "base（既定）/ crest。s_start を谷から始めるか山から始めるか"
+  }
+}
