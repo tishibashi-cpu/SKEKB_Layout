@@ -170,12 +170,20 @@ def _split_taper(code: str, library=None):
     return out
 
 
+# Synrad3D の shape_def namelist は v(100) 固定。終端検出に 1 枠使うので実質 99 個。
+MAX_VERTEX = 99
+
+
 def validate_shape(shape) -> list[str]:
     """Bmad の頂点規則に照らして問題点を列挙する（空リストなら OK）。"""
     v = shape.get("v") or []
     errs: list[str] = []
     if not v:
         return ["頂点がありません"]
+    if len(v) > MAX_VERTEX:
+        errs.append(f"頂点が {len(v)} 個あります。Synrad3D の shape_def は v(100) 固定なので"
+                    f"{MAX_VERTEX} 個以下にしてください（超えると "
+                    f"'Index 1 out of range for namelist variable v' で落ちます）")
     if len(v) == 1:
         rx = v[0][2] if len(v[0]) > 2 else 0.0
         if rx == 0 and (v[0][0] == 0 or v[0][1] == 0):
@@ -649,8 +657,19 @@ def _overlay_runs(sections, library):
     区間の両端には @START / @END を付ける。これが無いと Synrad3D は
     「open-ended サブチェンバ」と解釈して機械全長にわたって存在させてしまう。
 
+    差し込みに guard がある場合、サブチェンバは先端部だけでなく guard の外端
+    （ラベル <名前>_in / <名前>_out の断面）まで広げる。コリメータのローブを先端の
+    10 mm だけに置くと、前後のテーパー区間では主チェンバ（中央ギャップ）だけになり、
+    ブレードの無い方向にまで架空の絞りができてしまうため。
+
     戻り値: {s: [(overlay_id, edge), ...]} と、使った overlay の名前集合。
     """
+    # 先端部の断面が持つ overlays を、同じ差し込みの _in / _out 断面にも引き継ぐ
+    tip_overlays: dict[str, set] = {}
+    for _s, sid, lab in sections:
+        if lab.endswith("_tip"):
+            tip_overlays[lab[:-4]] = set(library.get(sid, {}).get("overlays") or [])
+
     at: dict[float, list[tuple[str, str]]] = {}
     names: set[str] = set()
     active: dict[str, float] = {}           # overlay_id -> START の s
@@ -664,12 +683,16 @@ def _overlay_runs(sections, library):
         at.setdefault(s_end, []).append((oid, "END"))
         del active[oid]
 
-    for s, sid, _lab in sections:
+    for s, sid, lab in sections:
         entry = library.get(sid, {})
         if entry.get("overlays_pass") and active:
             # コリメータのように区間の途中に挟まる断面。サブチェンバは継続させる。
             continue
         want = set(entry.get("overlays") or [])
+        if lab.endswith("_in"):
+            want |= tip_overlays.get(lab[:-3], set())
+        elif lab.endswith("_out"):
+            want |= tip_overlays.get(lab[:-4], set())
         for oid in sorted(set(active) - want):
             close(oid)
         for oid in sorted(want):
@@ -683,12 +706,114 @@ def _overlay_runs(sections, library):
     return at, names, short
 
 
-def write_wall_file(dispog_path: str, ring: str, out_path: str) -> dict:
+def _shape_polygon(shape, step_deg=2.0):
+    """
+    shape_def 1 個を、Bmad と同じ対称展開・円弧中心の規則で外周多角形に戻す（絶対座標 [m]）。
+    包含判定などの検査用。
+    """
+    r0 = shape.get("r0", [0.0, 0.0])
+    v = [list(p) + [0.0] * (3 - len(p)) for p in shape["v"]]
+    T = 1e-12
+    if len(v) == 1 and v[0][2] == 0:
+        a, b = v[0][0], v[0][1]
+        v = [[a, b, 0.0], [-a, b, 0.0], [-a, -b, 0.0], [a, -b, 0.0]]
+    elif len(v) == 1:                                   # 頂点 1 個＋半径 = 円／楕円
+        rx = v[0][2]; ry = v[0][3] if len(v[0]) > 3 and v[0][3] else rx
+        return [(r0[0] + v[0][0] + rx * math.cos(2 * math.pi * k / 90),
+                 r0[1] + v[0][1] + ry * math.sin(2 * math.pi * k / 90)) for k in range(90)]
+    else:
+        for quarter in (True, False):
+            n = len(v)
+            ok = (all(p[0] >= -T for p in v) and all(p[1] >= -T for p in v)) if quarter \
+                else all(p[1] >= -T for p in v)
+            if not ok:
+                continue
+            j = 0 if quarter else 1
+            mir = [list(p) for p in (v[n - 2::-1] if abs(v[n - 1][j]) < T else v[::-1])]
+            if abs(v[n - 1][j]) >= T:
+                mir[0][2] = 0.0
+            for p in mir:
+                p[j] = -p[j]
+            src = [p[2] for p in v[n - 1:0:-1]]
+            for i in range(len(src)):
+                mir[len(mir) - len(src) + i][2] = src[i]
+            v = v + mir
+            if not quarter and abs(v[0][1]) < T:
+                v[0] = v[-1]
+                v = v[:-1]
+    pts = []
+    for i in range(len(v)):
+        x1, y1 = v[i - 1][0], v[i - 1][1]
+        x2, y2, R = v[i][0], v[i][1], v[i][2]
+        pts.append((x1, y1))
+        if abs(R) < 1e-12:
+            continue
+        xm, ym, dx, dy = (x1 + x2) / 2, (y1 + y2) / 2, (x2 - x1) / 2, (y2 - y1) / 2
+        a2 = (R * R - dx * dx - dy * dy) / (dx * dx + dy * dy)
+        if a2 < 0:
+            continue
+        a = math.sqrt(a2) * (-1 if xm * dy > ym * dx else 1) * (-1 if R < 0 else 1)
+        cx, cy = xm + a * dy, ym - a * dx
+        t1, t2 = math.atan2(y1 - cy, x1 - cx), math.atan2(y2 - cy, x2 - cx)
+        d = (t2 - t1 + math.pi) % (2 * math.pi) - math.pi
+        m = max(int(abs(math.degrees(d)) / step_deg), 1)
+        pts += [(cx + abs(R) * math.cos(t1 + d * k / m), cy + abs(R) * math.sin(t1 + d * k / m))
+                for k in range(1, m)]
+    return [(x + r0[0], y + r0[1]) for x, y in pts]
+
+
+def _inside_poly(pts, x, y):
+    c = False
+    for i in range(len(pts)):
+        x1, y1 = pts[i]
+        x2, y2 = pts[(i + 1) % len(pts)]
+        if (y1 > y) != (y2 > y) and x < (x2 - x1) * (y - y1) / (y2 - y1) + x1:
+            c = not c
+    return c
+
+
+def check_lobe_containment(sections, library, tol=1e-5):
+    """
+    guard の外端で、コリメータのローブが周囲の標準チェンバに収まっているかを調べる。
+    はみ出していると、テーパー区間で和集合が標準チェンバより太くなってしまう。
+    """
+    tips = {lab[:-4]: sid for _s, sid, lab in sections if lab.endswith("_tip")}
+    warns, seen = [], set()
+    for s, sid, lab in sections:
+        for suf in ("_in", "_out"):
+            if not lab.endswith(suf):
+                continue
+            name = lab[: -len(suf)]
+            amb = library.get(sid) or _auto_shape(sid)
+            if name not in tips or amb is None:
+                continue
+            amb_poly = _shape_polygon(amb)
+            for oid in library.get(tips[name], {}).get("overlays") or []:
+                key = (name, oid, sid)
+                if key in seen or oid not in library:
+                    continue
+                seen.add(key)
+                lobe = library[oid]
+                c = lobe.get("r0", [0.0, 0.0])
+                # ローブの外周を r0 側へわずかに縮めて、境界の共有を「内側」と判定させる
+                out = [p for p in _shape_polygon(lobe)
+                       if not _inside_poly(amb_poly, p[0] - tol * (p[0] - c[0]) / max(math.hypot(p[0] - c[0], p[1] - c[1]), 1e-12),
+                                           p[1] - tol * (p[1] - c[1]) / max(math.hypot(p[0] - c[0], p[1] - c[1]), 1e-12))]
+                if out:
+                    worst = max(out, key=lambda q: math.hypot(*q))
+                    warns.append(f"{name}: ローブ {oid} が {sid} からはみ出しています"
+                                 f"（例 x = {worst[0] * 1000:.1f}, y = {worst[1] * 1000:.1f} mm）")
+    return warns
+
+
+def write_wall_file(dispog_path: str, ring: str, out_path: str,
+                    allow_invalid: bool = False) -> dict:
     """Synrad3D wall file を書き出す。戻り値に断面数・未定義コード・検証結果を含む。"""
     sections, used, placeholders, insert_notes = build_sections(dispog_path, ring)
     library = _load_library()
 
     overlay_at, overlay_names, short_runs = _overlay_runs(sections, library)
+    containment = check_lobe_containment(sections, library)
     for oid in overlay_names:
         if oid in library:
             used.setdefault(oid, library[oid])
@@ -711,6 +836,10 @@ def write_wall_file(dispog_path: str, ring: str, out_path: str) -> dict:
         lines.append("! 差し込み（config/<ring>_wall_inserts.json）:")
         for n in insert_notes:
             lines.append(f"!   {n}")
+    if containment:
+        lines.append("! WARNING: guard の外端でローブが標準チェンバからはみ出しています:")
+        for w in containment:
+            lines.append(f"!   {w}")
     if short_runs:
         lines.append("! WARNING: START と END が同じ s になったサブチェンバ区間:")
         lines.append("!   " + ", ".join(short_runs))
@@ -754,12 +883,17 @@ def write_wall_file(dispog_path: str, ring: str, out_path: str) -> dict:
         lines.append("/")
         lines.append("")
 
+    result = {"sections": len(sections), "shapes": len(used),
+              "placeholders": sorted(placeholders), "invalid": bad,
+              "inserts": insert_notes, "written": False, "containment": containment}
+    # 頂点規則に違反した形状があると Synrad3D は読み込みで落ちるので、既定では書かない
+    if bad and not allow_invalid:
+        return result
     out = Path(out_path)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    return {"sections": len(sections), "shapes": len(used),
-            "placeholders": sorted(placeholders), "invalid": bad,
-            "inserts": insert_notes}
+    result["written"] = True
+    return result
 
 
 def check_library() -> dict:
@@ -779,7 +913,8 @@ def _main(argv=None):
         description="dispog + Duct_Type から Synrad3D wall file を生成（試作）")
     p.add_argument("dispog", nargs="?", help="dispog ファイル")
     p.add_argument("--ring", choices=["HER", "LER"], default=None)
-    p.add_argument("-o", "--out", default=None, help="出力 wall ファイル")
+    p.add_argument("-o", "--out", default=None,
+                   help="出力 wall ファイル（既定 <dispog名>.wall3d）")
     p.add_argument("--check-shapes", action="store_true",
                    help="wall_shapes.json を頂点規則で検証して終了")
     p.add_argument("--update-collimators", action="store_true",
@@ -788,6 +923,8 @@ def _main(argv=None):
                    help="--update-collimators: 先端部の長さ [m]（既定 0.010、既存行は保持）")
     p.add_argument("--guard", type=float, default=None,
                    help="--update-collimators: 補間を止める距離 [m]（既定 0.30、既存行は保持）")
+    p.add_argument("--allow-invalid", action="store_true",
+                   help="頂点規則に違反した形状があっても wall file を書き出す（確認用）")
     p.add_argument("--include-fake", action="store_true",
                    help="--update-collimators: FPM*（実機なしのマーカー）も取り込む")
     a = p.parse_args(argv)
@@ -829,16 +966,25 @@ def _main(argv=None):
         print(f"出力: {r['path']}")
         return 0
 
-    out = a.out or (Path(a.dispog).stem + f"_{ring}.wall")
-    info = write_wall_file(a.dispog, ring, out)
+    out = a.out or (Path(a.dispog).stem + ".wall3d")
+    info = write_wall_file(a.dispog, ring, out, a.allow_invalid)
     print(f"  断面配置 {info['sections']} 個 / 形状 {info['shapes']} 種")
     for n in info["inserts"]:
         print(f"  差し込み: {n}")
     if info["placeholders"]:
         print("  ※ 要定義（仮形状）:", ", ".join(info["placeholders"]))
+    for w in info.get("containment", []):
+        print(f"  ※ {w}")
     if info["invalid"]:
-        print("  ※ 頂点規則違反（Synrad3D が読めません）:",
-              ", ".join(sorted(info["invalid"])))
+        print()
+        print("  " + "!" * 60)
+        print("  エラー: 頂点規則に違反した形状があります。Synrad3D は読み込みで停止します。")
+        for sid in sorted(info["invalid"]):
+            print(f"    {sid}: {info['invalid'][sid][0]}")
+        if not info["written"]:
+            print("  wall file は書き出していません（--allow-invalid で強制的に書き出せます）。")
+        print("  " + "!" * 60)
+        return 1
     print(f"出力: {out}")
     return 0
 

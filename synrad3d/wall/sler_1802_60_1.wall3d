@@ -1,0 +1,852 @@
+! Synrad3D wall file (auto-generated) ring=LER
+! sections=185  shapes=91
+! 差し込み（config/<ring>_wall_inserts.json）:
+!   IR left (QCSLP): s=0.5100..2.5100 に 19 断面
+!   IR right (QCSRP): s=3013.7265..3015.8165 に 19 断面
+!   IR right ridge: s=3015.8540..3016.0840 に 47 断面
+!   D06H3: s=1787.9420..1788.1020 に 2 断面
+!   D06H4: s=1816.8847..1816.8947 に 2 断面
+!   D02H3: s=2947.4400..2947.4500 に 2 断面
+!   D02H4: s=3000.4197..3000.4297 に 2 断面
+!   D02V1: s=2930.4671..2930.4771 に 2 断面
+!   D03V4: s=2546.9052..2546.9152 に 2 断面
+!   D05V1: s=2236.9301..2236.9401 に 2 断面
+!   D06V1: s=1870.2633..1870.2733 に 2 断面
+!   D02H1: s=2872.9626..2872.9726 に 2 断面
+!   D02H2: s=2895.8999..2895.9099 に 2 断面
+!   D03H1: s=2616.9764..2616.9864 に 2 断面
+
+&place section = 0.51000, "IR left (QCSLP)", "f20" /
+&place section = 0.58700, "IR left (QCSLP)", "f20" /
+&place section = 0.58700, "IR left (QCSLP)", "f21" /
+&place section = 0.63700, "IR left (QCSLP)", "f21" /
+&place section = 0.63700, "IR left (QCSLP)", "f20" /
+&place section = 0.67700, "IR left (QCSLP)", "f20" /
+&place section = 0.67700, "IR left (QCSLP)", "f21" /
+&place section = 0.73600, "IR left (QCSLP)", "f21" /
+&place section = 0.76600, "IR left (QCSLP)", "e21x27" /
+&place section = 1.13400, "IR left (QCSLP)", "e21x27" /
+&place section = 1.22400, "IR left (QCSLP)", "f28" /
+&place section = 1.24400, "IR left (QCSLP)", "f28" /
+&place section = 1.31400, "IR left (QCSLP)", "f44_8" /
+&place section = 1.64200, "IR left (QCSLP)", "f44_8" /
+&place section = 1.68200, "IR left (QCSLP)", "f46" /
+&place section = 1.80200, "IR left (QCSLP)", "f70_3" /
+&place section = 2.41200, "IR left (QCSLP)", "f70_3" /
+&place section = 2.46200, "IR left (QCSLP)", "f80" /
+&place section = 2.51000, "IR left (QCSLP)", "f80" /
+&place section = 4.62907, "QKALP", "f80" /
+&place section = 13.99846, "QLC1LP", "f80" /
+&place section = 20.38328, "QLC2LP", "f90" /
+&place section = 29.85970, "BLY2LP.1", "f90" /
+&place section = 38.40437, "BLY3LP.1", "f90x220_Ar" /
+&place section = 55.12492, "BLY3LP.2", "f90x220_Ar" /
+&place section = 61.74022, "BLY2LP.2", "f90" /
+&place section = 67.23183, "QLB1LP", "f90" /
+&place section = 67.81555, "QLB1LP", "f90x220_Ar" /
+&place section = 116.30457, "BLX2LP.2", "f90x220_Ar" /
+&place section = 118.53486, "BLX2LP.2", "f90" /
+&place section = 121.02654, "BLA1LP", "f90" /
+&place section = 129.58927, "QLA3LP", "f90x220_Ar" /
+&place section = 656.79124, "QW6NRP", "f90x220_Ar" /
+&place section = 658.71652, "BP2NRP.1", "f90x220_St" /
+&place section = 868.99492, "QS1NP.2", "f90x220_St" /
+&place section = 873.88485, "QSBNP.2", "f90x220_Ar" /
+&place section = 1401.51899, "QR6P", "f90x220_Ar" /
+&place section = 1409.22372, "QR5P", "f90x220H24" /
+&place section = 1423.11243, "QR3P", "f90x220H24" /
+&place section = 1431.94913, "QR2P", "f150" /
+&place section = 1484.96933, "QV4P.1", "f150" /
+&place section = 1491.74293, "QV3P.1", "f94" /
+&place section = 1498.41705, "QV1P.1", "f94" /
+&place section = 1500.62744, "BV2P.1", "f64" /
+&place section = 1516.93770, "-BV2P.2", "f64" /
+&place section = 1520.08731, "QV1P.2", "f94" /
+&place section = 1526.76143, "QV3P.2", "f94" /
+&place section = 1533.41209, "QV4P.2", "f150" /
+&place section = 1577.59559, "QI3P", "f150" /
+&place section = 1587.17978, "QI4P", "60x40" /
+&place section = 1611.24392, "QI7P", "60x40" /
+&place section = 1616.52973, "QI8P", "f90x220_Ar" /
+&place section = 1623.44182, "QS1FLP", "f90x220_Ar" /
+&place section = 1628.33175, "QSBFLP", "122x50" /
+&place section = 1633.22168, "QS2FLP", "f90" /
+&place section = 1633.68395, "QS2FLP", "f90x220_Ar" /
+&place section = 1787.64199, "D06H3_in", "f90x220_Ar" /
+&place section = 1787.94199, "D06H3_tip", "D06H3" /
+&place section = 1788.10199, "D06H3_tip", "D06H3" /
+&place section = 1788.40199, "D06H3_out", "f90x220_Ar" /
+&place section = 1816.58474, "D06H4_in", "f90x220_Ar" /
+&place section = 1816.88474, "D06H4_tip", "D06H4" /
+&place section = 1816.89474, "D06H4_tip", "D06H4" /
+&place section = 1817.19474, "D06H4_out", "f90x220_Ar" /
+&place section = 1869.96329, "D06V1_in", "f90x220_Ar" /
+&place section = 1869.96329, "D06V1_in", "D06V1_colL:D06V1_lobeL@START" /
+&place section = 1869.96329, "D06V1_in", "D06V1_colR:D06V1_lobeR@START" /
+&place section = 1870.26329, "D06V1_tip", "D06V1" /
+&place section = 1870.27329, "D06V1_tip", "D06V1" /
+&place section = 1870.57329, "D06V1_out", "f90x220_Ar" /
+&place section = 1870.57329, "D06V1_out", "D06V1_colL:D06V1_lobeL@END" /
+&place section = 1870.57329, "D06V1_out", "D06V1_colR:D06V1_lobeR@END" /
+&place section = 2165.20276, "QW6ORP", "f90x220_Ar" /
+&place section = 2177.44776, "QW5ORP", "f150" /
+&place section = 2205.72516, "QW2ORP", "f150" /
+&place section = 2212.73663, "QN1OP", "f90x220_Ar" /
+&place section = 2213.19741, "QN1OP", "f90" /
+&place section = 2221.09363, "QN2OP.1", "f90x220_Ar" /
+&place section = 2236.63012, "D05V1_in", "f90x220_Ar" /
+&place section = 2236.63012, "D05V1_in", "D05V1_colL:D05V1_lobeL@START" /
+&place section = 2236.63012, "D05V1_in", "D05V1_colR:D05V1_lobeR@START" /
+&place section = 2236.93012, "D05V1_tip", "D05V1" /
+&place section = 2236.94012, "D05V1_tip", "D05V1" /
+&place section = 2237.24012, "D05V1_out", "f90x220_Ar" /
+&place section = 2237.24012, "D05V1_out", "D05V1_colL:D05V1_lobeL@END" /
+&place section = 2237.24012, "D05V1_out", "D05V1_colR:D05V1_lobeR@END" /
+&place section = 2258.04863, "QN5OP", "f90x220_Ar" /
+&place section = 2262.34143, "QN6OP", "f90x220_St" /
+&place section = 2376.54101, "QS1OP.2", "f90x220_St" /
+&place section = 2381.43094, "QSBOP.2", "f90x220_Ar" /
+&place section = 2546.60525, "D03V4_in", "f90x220_Ar" /
+&place section = 2546.60525, "D03V4_in", "D03V4_colL:D03V4_lobeL@START" /
+&place section = 2546.60525, "D03V4_in", "D03V4_colR:D03V4_lobeR@START" /
+&place section = 2546.90525, "D03V4_tip", "D03V4" /
+&place section = 2546.91525, "D03V4_tip", "D03V4" /
+&place section = 2547.21525, "D03V4_out", "f90x220_Ar" /
+&place section = 2547.21525, "D03V4_out", "D03V4_colL:D03V4_lobeL@END" /
+&place section = 2547.21525, "D03V4_out", "D03V4_colR:D03V4_lobeR@END" /
+&place section = 2616.67637, "D03H1_in", "f90x220_Ar" /
+&place section = 2616.67637, "D03H1_in", "D03H1_colB:D03H1_lobeB@START" /
+&place section = 2616.67637, "D03H1_in", "D03H1_colT:D03H1_lobeT@START" /
+&place section = 2616.97637, "D03H1_tip", "D03H1" /
+&place section = 2616.98637, "D03H1_tip", "D03H1" /
+&place section = 2617.28638, "D03H1_out", "f90x220_Ar" /
+&place section = 2617.28638, "D03H1_out", "D03H1_colB:D03H1_lobeB@END" /
+&place section = 2617.28638, "D03H1_out", "D03H1_colT:D03H1_lobeT@END" /
+&place section = 2872.66260, "D02H1_in", "f90x220_Ar" /
+&place section = 2872.66260, "D02H1_in", "D02H1_colB:D02H1_lobeB@START" /
+&place section = 2872.66260, "D02H1_in", "D02H1_colT:D02H1_lobeT@START" /
+&place section = 2872.96260, "D02H1_tip", "D02H1" /
+&place section = 2872.97260, "D02H1_tip", "D02H1" /
+&place section = 2873.27261, "D02H1_out", "f90x220_Ar" /
+&place section = 2873.27261, "D02H1_out", "D02H1_colB:D02H1_lobeB@END" /
+&place section = 2873.27261, "D02H1_out", "D02H1_colT:D02H1_lobeT@END" /
+&place section = 2895.59993, "D02H2_in", "f90x220_Ar" /
+&place section = 2895.59993, "D02H2_in", "D02H2_colB:D02H2_lobeB@START" /
+&place section = 2895.59993, "D02H2_in", "D02H2_colT:D02H2_lobeT@START" /
+&place section = 2895.89993, "D02H2_tip", "D02H2" /
+&place section = 2895.90993, "D02H2_tip", "D02H2" /
+&place section = 2896.20993, "D02H2_out", "f90x220_Ar" /
+&place section = 2896.20993, "D02H2_out", "D02H2_colB:D02H2_lobeB@END" /
+&place section = 2896.20993, "D02H2_out", "D02H2_colT:D02H2_lobeT@END" /
+&place section = 2919.90539, "BLX2RP.2", "f90x220_Ar" /
+&place section = 2922.13568, "BLX2RP.2", "f90" /
+&place section = 2923.44968, "QLB4RP", "f90" /
+&place section = 2924.03340, "QLB4RP", "f90x220_Ar" /
+&place section = 2930.16708, "D02V1_in", "f90x220_Ar" /
+&place section = 2930.16708, "D02V1_in", "D02V1_colL:D02V1_lobeL@START" /
+&place section = 2930.16708, "D02V1_in", "D02V1_colR:D02V1_lobeR@START" /
+&place section = 2930.46708, "D02V1_tip", "D02V1" /
+&place section = 2930.47708, "D02V1_tip", "D02V1" /
+&place section = 2930.77708, "D02V1_out", "f90x220_Ar" /
+&place section = 2930.77708, "D02V1_out", "D02V1_colL:D02V1_lobeL@END" /
+&place section = 2930.77708, "D02V1_out", "D02V1_colR:D02V1_lobeR@END" /
+&place section = 2947.14001, "D02H3_in", "f90x220_Ar" /
+&place section = 2947.44001, "D02H3_tip", "D02H3" /
+&place section = 2947.45001, "D02H3_tip", "D02H3" /
+&place section = 2947.75002, "D02H3_out", "f90x220_Ar" /
+&place section = 2979.62662, "BLY3RP.2", "f90x220_Ar" /
+&place section = 2983.89911, "BLY2RP.2", "f90" /
+&place section = 2996.95147, "QLC2RP", "f90" /
+&place section = 3000.11975, "D02H4_in", "f90" /
+&place section = 3000.11975, "D02H4_in", "D02H4_colB:D02H4_lobeB@START" /
+&place section = 3000.11975, "D02H4_in", "D02H4_colT:D02H4_lobeT@START" /
+&place section = 3000.41975, "D02H4_tip", "D02H4" /
+&place section = 3000.42975, "D02H4_tip", "D02H4" /
+&place section = 3000.72975, "D02H4_out", "f90" /
+&place section = 3000.72975, "D02H4_out", "D02H4_colB:D02H4_lobeB@END" /
+&place section = 3000.72975, "D02H4_out", "D02H4_colT:D02H4_lobeT@END" /
+&place section = 3002.73288, "QLC1RP", "f80" /
+&place section = 3011.33302, "QKARP", "f80" /
+&place section = 3013.72650, "IR right (QCSRP)", "f80" /
+&place section = 3013.77450, "IR right (QCSRP)", "f80" /
+&place section = 3013.82450, "IR right (QCSRP)", "f70_3" /
+&place section = 3014.52450, "IR right (QCSRP)", "f70_3" /
+&place section = 3014.64450, "IR right (QCSRP)", "f46" /
+&place section = 3014.68450, "IR right (QCSRP)", "f44_8" /
+&place section = 3015.01250, "IR right (QCSRP)", "f44_8" /
+&place section = 3015.08250, "IR right (QCSRP)", "f28" /
+&place section = 3015.10250, "IR right (QCSRP)", "f28" /
+&place section = 3015.19250, "IR right (QCSRP)", "e21x27" /
+&place section = 3015.56050, "IR right (QCSRP)", "e21x27" /
+&place section = 3015.59050, "IR right (QCSRP)", "f21" /
+&place section = 3015.64950, "IR right (QCSRP)", "f21" /
+&place section = 3015.64950, "IR right (QCSRP)", "f20" /
+&place section = 3015.68950, "IR right (QCSRP)", "f20" /
+&place section = 3015.68950, "IR right (QCSRP)", "f21" /
+&place section = 3015.73950, "IR right (QCSRP)", "f21" /
+&place section = 3015.73950, "IR right (QCSRP)", "f20" /
+&place section = 3015.81650, "IR right (QCSRP)", "f20" /
+&place section = 3015.85400, "IR right ridge", "f20_04" /
+&place section = 3015.85900, "IR right ridge", "f20_75" /
+&place section = 3015.86400, "IR right ridge", "f19_6" /
+&place section = 3015.86900, "IR right ridge", "f20_32" /
+&place section = 3015.87400, "IR right ridge", "f19_16" /
+&place section = 3015.87900, "IR right ridge", "f19_88" /
+&place section = 3015.88400, "IR right ridge", "f18_73" /
+&place section = 3015.88900, "IR right ridge", "f19_44" /
+&place section = 3015.89400, "IR right ridge", "f18_29" /
+&place section = 3015.89900, "IR right ridge", "f19_01" /
+&place section = 3015.90400, "IR right ridge", "f17_86" /
+&place section = 3015.90900, "IR right ridge", "f18_57" /
+&place section = 3015.91400, "IR right ridge", "f17_42" /
+&place section = 3015.91900, "IR right ridge", "f18_14" /
+&place section = 3015.92400, "IR right ridge", "f16_98" /
+&place section = 3015.92900, "IR right ridge", "f17_7" /
+&place section = 3015.93400, "IR right ridge", "f16_55" /
+&place section = 3015.93900, "IR right ridge", "f17_26" /
+&place section = 3015.94400, "IR right ridge", "f16_11" /
+&place section = 3015.94900, "IR right ridge", "f16_83" /
+&place section = 3015.95400, "IR right ridge", "f15_68" /
+&place section = 3015.95900, "IR right ridge", "f16_39" /
+&place section = 3015.96400, "IR right ridge", "f15_24" /
+&place section = 3015.96900, "IR right ridge", "f15_96" /
+&place section = 3015.97400, "IR right ridge", "f14_8" /
+&place section = 3015.97900, "IR right ridge", "f15_52" /
+&place section = 3015.98400, "IR right ridge", "f14_37" /
+&place section = 3015.98900, "IR right ridge", "f15_08" /
+&place section = 3015.99400, "IR right ridge", "f13_93" /
+&place section = 3015.99900, "IR right ridge", "f14_65" /
+&place section = 3016.00400, "IR right ridge", "f13_49" /
+&place section = 3016.00900, "IR right ridge", "f14_21" /
+&place section = 3016.01400, "IR right ridge", "f13_06" /
+&place section = 3016.01900, "IR right ridge", "f13_77" /
+&place section = 3016.02400, "IR right ridge", "f12_62" /
+&place section = 3016.02900, "IR right ridge", "f13_34" /
+&place section = 3016.03400, "IR right ridge", "f12_19" /
+&place section = 3016.03900, "IR right ridge", "f12_9" /
+&place section = 3016.04400, "IR right ridge", "f11_75" /
+&place section = 3016.04900, "IR right ridge", "f12_47" /
+&place section = 3016.05400, "IR right ridge", "f11_31" /
+&place section = 3016.05900, "IR right ridge", "f12_03" /
+&place section = 3016.06400, "IR right ridge", "f10_88" /
+&place section = 3016.06900, "IR right ridge", "f11_59" /
+&place section = 3016.07400, "IR right ridge", "f10_44" /
+&place section = 3016.07900, "IR right ridge", "f11_16" /
+&place section = 3016.08400, "IR right ridge", "f10_01" /
+
+&shape_def   ! auto (racetrack)
+  name = "122x50"
+  v(1) = 0.061, 0
+  v(2) = 0.036, 0.025, 0.025
+  v(3) = 0, 0.025
+/
+
+&shape_def   ! auto (racetrack)
+  name = "60x40"
+  v(1) = 0.03, 0
+  v(2) = 0.01, 0.02, 0.02
+  v(3) = 0, 0.02
+/
+
+&shape_def
+  name = "D02H1"
+  v(1) = 0.0083, 0.0072
+/
+
+&shape_def
+  name = "D02H1_lobeB"
+  r0 = 0, -0.0071625
+  v(1) = 0.0115434, 0.0001625, 0.0135
+  v(2) = -0.0115434, 0.0001625
+  v(3) = 0, -0.0063375, 0.0135
+/
+
+&shape_def
+  name = "D02H1_lobeT"
+  r0 = 0, 0.0071625
+  v(1) = 0, 0.0063375, 0.0135
+  v(2) = -0.0115434, -0.0001625, 0.0135
+  v(3) = 0.0115434, -0.0001625
+/
+
+&shape_def
+  name = "D02H2"
+  v(1) = 0.0114, 0.0072
+/
+
+&shape_def
+  name = "D02H2_lobeB"
+  r0 = 0, -0.0071625
+  v(1) = 0.0115434, 0.0001625, 0.0135
+  v(2) = -0.0115434, 0.0001625
+  v(3) = 0, -0.0063375, 0.0135
+/
+
+&shape_def
+  name = "D02H2_lobeT"
+  r0 = 0, 0.0071625
+  v(1) = 0, 0.0063375, 0.0135
+  v(2) = -0.0115434, -0.0001625, 0.0135
+  v(3) = 0.0115434, -0.0001625
+/
+
+&shape_def
+  name = "D02H3"
+  v(1) = 0.0147, 0.007
+  v(2) = 0.011543, 0.007
+  v(3) = 0, 0.0135, 0.0135
+/
+
+&shape_def
+  name = "D02H4"
+  v(1) = 0.009, 0.0072
+/
+
+&shape_def
+  name = "D02H4_lobeB"
+  r0 = 0, -0.0071625
+  v(1) = 0.0115434, 0.0001625, 0.0135
+  v(2) = -0.0115434, 0.0001625
+  v(3) = 0, -0.0063375, 0.0135
+/
+
+&shape_def
+  name = "D02H4_lobeT"
+  r0 = 0, 0.0071625
+  v(1) = 0, 0.0063375, 0.0135
+  v(2) = -0.0115434, -0.0001625, 0.0135
+  v(3) = 0.0115434, -0.0001625
+/
+
+&shape_def
+  name = "D02V1"
+  v(1) = 0.0072, 0.0014
+/
+
+&shape_def
+  name = "D02V1_lobeL"
+  r0 = -0.007825, 0
+  v(1) = 0.000825, 0.0115434
+  v(2) = -0.00153026, 0.00973289, 0.0135
+  v(3) = -0.0034325, 0.00745109, 0.0135
+  v(4) = -0.00379657, 0.00711983, -0.00100798
+  v(5) = -0.00427498, 0.007, -0.00100998
+  v(6) = -0.032175, 0.007
+/
+
+&shape_def
+  name = "D02V1_lobeR"
+  r0 = 0.007825, 0
+  v(1) = 0.032175, 0.007
+  v(2) = 0.00427498, 0.007
+  v(3) = 0.00379657, 0.00711983, -0.00100997
+  v(4) = 0.0034325, 0.00745109, -0.00100796
+  v(5) = 0.00153026, 0.00973289, 0.0135
+  v(6) = -0.000825, 0.0115434, 0.0135
+/
+
+&shape_def
+  name = "D03H1"
+  v(1) = 0.0107, 0.0072
+/
+
+&shape_def
+  name = "D03H1_lobeB"
+  r0 = 0, -0.0071625
+  v(1) = 0.0115434, 0.0001625, 0.0135
+  v(2) = -0.0115434, 0.0001625
+  v(3) = 0, -0.0063375, 0.0135
+/
+
+&shape_def
+  name = "D03H1_lobeT"
+  r0 = 0, 0.0071625
+  v(1) = 0, 0.0063375, 0.0135
+  v(2) = -0.0115434, -0.0001625, 0.0135
+  v(3) = 0.0115434, -0.0001625
+/
+
+&shape_def
+  name = "D03V4"
+  v(1) = 0.0072, 0.0018
+/
+
+&shape_def
+  name = "D03V4_lobeL"
+  r0 = -0.007825, 0
+  v(1) = 0.000825, 0.0115434
+  v(2) = -0.00153026, 0.00973289, 0.0135
+  v(3) = -0.0034325, 0.00745109, 0.0135
+  v(4) = -0.00379657, 0.00711983, -0.00100798
+  v(5) = -0.00427498, 0.007, -0.00100998
+  v(6) = -0.032175, 0.007
+/
+
+&shape_def
+  name = "D03V4_lobeR"
+  r0 = 0.007825, 0
+  v(1) = 0.032175, 0.007
+  v(2) = 0.00427498, 0.007
+  v(3) = 0.00379657, 0.00711983, -0.00100997
+  v(4) = 0.0034325, 0.00745109, -0.00100796
+  v(5) = 0.00153026, 0.00973289, 0.0135
+  v(6) = -0.000825, 0.0115434, 0.0135
+/
+
+&shape_def
+  name = "D05V1"
+  r0 = 0, 0.0025
+  v(1) = 0.0072, 0.0055
+/
+
+&shape_def
+  name = "D05V1_lobeL"
+  r0 = -0.007825, 0
+  v(1) = 0.000825, 0.0115434
+  v(2) = -0.00153026, 0.00973289, 0.0135
+  v(3) = -0.0034325, 0.00745109, 0.0135
+  v(4) = -0.00379657, 0.00711983, -0.00100798
+  v(5) = -0.00427498, 0.007, -0.00100998
+  v(6) = -0.032175, 0.007
+/
+
+&shape_def
+  name = "D05V1_lobeR"
+  r0 = 0.007825, 0
+  v(1) = 0.032175, 0.007
+  v(2) = 0.00427498, 0.007
+  v(3) = 0.00379657, 0.00711983, -0.00100997
+  v(4) = 0.0034325, 0.00745109, -0.00100796
+  v(5) = 0.00153026, 0.00973289, 0.0135
+  v(6) = -0.000825, 0.0115434, 0.0135
+/
+
+&shape_def
+  name = "D06H3"
+  v(1) = 0.012, 0.007
+  v(2) = 0.011543, 0.007
+  v(3) = 0, 0.0135, 0.0135
+/
+
+&shape_def
+  name = "D06H4"
+  v(1) = 0.012, 0.007
+  v(2) = 0.011543, 0.007
+  v(3) = 0, 0.0135, 0.0135
+/
+
+&shape_def
+  name = "D06V1"
+  v(1) = 0.0072, 0.0026
+/
+
+&shape_def
+  name = "D06V1_lobeL"
+  r0 = -0.007825, 0
+  v(1) = 0.000825, 0.0115434
+  v(2) = -0.00153026, 0.00973289, 0.0135
+  v(3) = -0.0034325, 0.00745109, 0.0135
+  v(4) = -0.00379657, 0.00711983, -0.00100798
+  v(5) = -0.00427498, 0.007, -0.00100998
+  v(6) = -0.032175, 0.007
+/
+
+&shape_def
+  name = "D06V1_lobeR"
+  r0 = 0.007825, 0
+  v(1) = 0.032175, 0.007
+  v(2) = 0.00427498, 0.007
+  v(3) = 0.00379657, 0.00711983, -0.00100997
+  v(4) = 0.0034325, 0.00745109, -0.00100796
+  v(5) = 0.00153026, 0.00973289, 0.0135
+  v(6) = -0.000825, 0.0115434, 0.0135
+/
+
+&shape_def   ! auto (ellipse)
+  name = "e21x27"
+  v(1) = 0, 0, 0.0105, 0.0135
+/
+
+&shape_def   ! auto (circle)
+  name = "f10_01"
+  v(1) = 0.005005, 0
+  v(2) = 0, 0.005005, 0.005005
+/
+
+&shape_def   ! auto (circle)
+  name = "f10_44"
+  v(1) = 0.00522, 0
+  v(2) = 0, 0.00522, 0.00522
+/
+
+&shape_def   ! auto (circle)
+  name = "f10_88"
+  v(1) = 0.00544, 0
+  v(2) = 0, 0.00544, 0.00544
+/
+
+&shape_def   ! auto (circle)
+  name = "f11_16"
+  v(1) = 0.00558, 0
+  v(2) = 0, 0.00558, 0.00558
+/
+
+&shape_def   ! auto (circle)
+  name = "f11_31"
+  v(1) = 0.005655, 0
+  v(2) = 0, 0.005655, 0.005655
+/
+
+&shape_def   ! auto (circle)
+  name = "f11_59"
+  v(1) = 0.005795, 0
+  v(2) = 0, 0.005795, 0.005795
+/
+
+&shape_def   ! auto (circle)
+  name = "f11_75"
+  v(1) = 0.005875, 0
+  v(2) = 0, 0.005875, 0.005875
+/
+
+&shape_def   ! auto (circle)
+  name = "f12_03"
+  v(1) = 0.006015, 0
+  v(2) = 0, 0.006015, 0.006015
+/
+
+&shape_def   ! auto (circle)
+  name = "f12_19"
+  v(1) = 0.006095, 0
+  v(2) = 0, 0.006095, 0.006095
+/
+
+&shape_def   ! auto (circle)
+  name = "f12_47"
+  v(1) = 0.006235, 0
+  v(2) = 0, 0.006235, 0.006235
+/
+
+&shape_def   ! auto (circle)
+  name = "f12_62"
+  v(1) = 0.00631, 0
+  v(2) = 0, 0.00631, 0.00631
+/
+
+&shape_def   ! auto (circle)
+  name = "f12_9"
+  v(1) = 0.00645, 0
+  v(2) = 0, 0.00645, 0.00645
+/
+
+&shape_def   ! auto (circle)
+  name = "f13_06"
+  v(1) = 0.00653, 0
+  v(2) = 0, 0.00653, 0.00653
+/
+
+&shape_def   ! auto (circle)
+  name = "f13_34"
+  v(1) = 0.00667, 0
+  v(2) = 0, 0.00667, 0.00667
+/
+
+&shape_def   ! auto (circle)
+  name = "f13_49"
+  v(1) = 0.006745, 0
+  v(2) = 0, 0.006745, 0.006745
+/
+
+&shape_def   ! auto (circle)
+  name = "f13_77"
+  v(1) = 0.006885, 0
+  v(2) = 0, 0.006885, 0.006885
+/
+
+&shape_def   ! auto (circle)
+  name = "f13_93"
+  v(1) = 0.006965, 0
+  v(2) = 0, 0.006965, 0.006965
+/
+
+&shape_def   ! auto (circle)
+  name = "f14_21"
+  v(1) = 0.007105, 0
+  v(2) = 0, 0.007105, 0.007105
+/
+
+&shape_def   ! auto (circle)
+  name = "f14_37"
+  v(1) = 0.007185, 0
+  v(2) = 0, 0.007185, 0.007185
+/
+
+&shape_def   ! auto (circle)
+  name = "f14_65"
+  v(1) = 0.007325, 0
+  v(2) = 0, 0.007325, 0.007325
+/
+
+&shape_def   ! auto (circle)
+  name = "f14_8"
+  v(1) = 0.0074, 0
+  v(2) = 0, 0.0074, 0.0074
+/
+
+&shape_def   ! auto (circle)
+  name = "f150"
+  v(1) = 0.075, 0
+  v(2) = 0, 0.075, 0.075
+/
+
+&shape_def   ! auto (circle)
+  name = "f15_08"
+  v(1) = 0.00754, 0
+  v(2) = 0, 0.00754, 0.00754
+/
+
+&shape_def   ! auto (circle)
+  name = "f15_24"
+  v(1) = 0.00762, 0
+  v(2) = 0, 0.00762, 0.00762
+/
+
+&shape_def   ! auto (circle)
+  name = "f15_52"
+  v(1) = 0.00776, 0
+  v(2) = 0, 0.00776, 0.00776
+/
+
+&shape_def   ! auto (circle)
+  name = "f15_68"
+  v(1) = 0.00784, 0
+  v(2) = 0, 0.00784, 0.00784
+/
+
+&shape_def   ! auto (circle)
+  name = "f15_96"
+  v(1) = 0.00798, 0
+  v(2) = 0, 0.00798, 0.00798
+/
+
+&shape_def   ! auto (circle)
+  name = "f16_11"
+  v(1) = 0.008055, 0
+  v(2) = 0, 0.008055, 0.008055
+/
+
+&shape_def   ! auto (circle)
+  name = "f16_39"
+  v(1) = 0.008195, 0
+  v(2) = 0, 0.008195, 0.008195
+/
+
+&shape_def   ! auto (circle)
+  name = "f16_55"
+  v(1) = 0.008275, 0
+  v(2) = 0, 0.008275, 0.008275
+/
+
+&shape_def   ! auto (circle)
+  name = "f16_83"
+  v(1) = 0.008415, 0
+  v(2) = 0, 0.008415, 0.008415
+/
+
+&shape_def   ! auto (circle)
+  name = "f16_98"
+  v(1) = 0.00849, 0
+  v(2) = 0, 0.00849, 0.00849
+/
+
+&shape_def   ! auto (circle)
+  name = "f17_26"
+  v(1) = 0.00863, 0
+  v(2) = 0, 0.00863, 0.00863
+/
+
+&shape_def   ! auto (circle)
+  name = "f17_42"
+  v(1) = 0.00871, 0
+  v(2) = 0, 0.00871, 0.00871
+/
+
+&shape_def   ! auto (circle)
+  name = "f17_7"
+  v(1) = 0.00885, 0
+  v(2) = 0, 0.00885, 0.00885
+/
+
+&shape_def   ! auto (circle)
+  name = "f17_86"
+  v(1) = 0.00893, 0
+  v(2) = 0, 0.00893, 0.00893
+/
+
+&shape_def   ! auto (circle)
+  name = "f18_14"
+  v(1) = 0.00907, 0
+  v(2) = 0, 0.00907, 0.00907
+/
+
+&shape_def   ! auto (circle)
+  name = "f18_29"
+  v(1) = 0.009145, 0
+  v(2) = 0, 0.009145, 0.009145
+/
+
+&shape_def   ! auto (circle)
+  name = "f18_57"
+  v(1) = 0.009285, 0
+  v(2) = 0, 0.009285, 0.009285
+/
+
+&shape_def   ! auto (circle)
+  name = "f18_73"
+  v(1) = 0.009365, 0
+  v(2) = 0, 0.009365, 0.009365
+/
+
+&shape_def   ! auto (circle)
+  name = "f19_01"
+  v(1) = 0.009505, 0
+  v(2) = 0, 0.009505, 0.009505
+/
+
+&shape_def   ! auto (circle)
+  name = "f19_16"
+  v(1) = 0.00958, 0
+  v(2) = 0, 0.00958, 0.00958
+/
+
+&shape_def   ! auto (circle)
+  name = "f19_44"
+  v(1) = 0.00972, 0
+  v(2) = 0, 0.00972, 0.00972
+/
+
+&shape_def   ! auto (circle)
+  name = "f19_6"
+  v(1) = 0.0098, 0
+  v(2) = 0, 0.0098, 0.0098
+/
+
+&shape_def   ! auto (circle)
+  name = "f19_88"
+  v(1) = 0.00994, 0
+  v(2) = 0, 0.00994, 0.00994
+/
+
+&shape_def   ! auto (circle)
+  name = "f20"
+  v(1) = 0.01, 0
+  v(2) = 0, 0.01, 0.01
+/
+
+&shape_def   ! auto (circle)
+  name = "f20_04"
+  v(1) = 0.01002, 0
+  v(2) = 0, 0.01002, 0.01002
+/
+
+&shape_def   ! auto (circle)
+  name = "f20_32"
+  v(1) = 0.01016, 0
+  v(2) = 0, 0.01016, 0.01016
+/
+
+&shape_def   ! auto (circle)
+  name = "f20_75"
+  v(1) = 0.010375, 0
+  v(2) = 0, 0.010375, 0.010375
+/
+
+&shape_def   ! auto (circle)
+  name = "f21"
+  v(1) = 0.0105, 0
+  v(2) = 0, 0.0105, 0.0105
+/
+
+&shape_def   ! auto (circle)
+  name = "f28"
+  v(1) = 0.014, 0
+  v(2) = 0, 0.014, 0.014
+/
+
+&shape_def   ! auto (circle)
+  name = "f44_8"
+  v(1) = 0.0224, 0
+  v(2) = 0, 0.0224, 0.0224
+/
+
+&shape_def   ! auto (circle)
+  name = "f46"
+  v(1) = 0.023, 0
+  v(2) = 0, 0.023, 0.023
+/
+
+&shape_def   ! auto (circle)
+  name = "f64"
+  v(1) = 0.032, 0
+  v(2) = 0, 0.032, 0.032
+/
+
+&shape_def   ! auto (circle)
+  name = "f70_3"
+  v(1) = 0.03515, 0
+  v(2) = 0, 0.03515, 0.03515
+/
+
+&shape_def   ! auto (circle)
+  name = "f80"
+  v(1) = 0.04, 0
+  v(2) = 0, 0.04, 0.04
+/
+
+&shape_def   ! auto (circle)
+  name = "f90"
+  v(1) = 0.045, 0
+  v(2) = 0, 0.045, 0.045
+/
+
+&shape_def
+  name = "f90x220H24"
+  v(1) = 0.11, 0
+  v(2) = 0.11, 0.0078
+  v(3) = 0.1058, 0.012, 0.0042
+  v(4) = 0.05419, 0.012
+  v(5) = 0.03998, 0.02066, -0.016
+  v(6) = 0, 0.045, 0.045
+/
+
+&shape_def
+  name = "f90x220_Ar"
+  v(1) = 0.11, 0
+  v(2) = 0.11, 0.0028
+  v(3) = 0.1058, 0.007, 0.0042
+  v(4) = 0.0565, 0.007
+  v(5) = 0.04168, 0.01697, -0.016
+  v(6) = 0, 0.045, 0.045
+  v(7) = -0.04168, 0.01697, 0.045
+  v(8) = -0.0565, 0.007, -0.016
+  v(9) = -0.0618, 0.007
+  v(10) = -0.066, 0.0028, 0.0042
+  v(11) = -0.066, 0
+/
+
+&shape_def
+  name = "f90x220_St"
+  v(1) = 0.11, 0
+  v(2) = 0.11, 0.0028
+  v(3) = 0.1058, 0.007, 0.0042
+  v(4) = 0.0565, 0.007
+  v(5) = 0.04168, 0.01697, -0.016
+  v(6) = 0, 0.045, 0.045
+/
+
+&shape_def   ! auto (circle)
+  name = "f94"
+  v(1) = 0.047, 0
+  v(2) = 0, 0.047, 0.047
+/
+
