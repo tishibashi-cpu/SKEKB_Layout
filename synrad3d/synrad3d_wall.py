@@ -1,6 +1,6 @@
 """
-synrad3d_wall.py — dispog + Duct_Type の断面情報から Synrad3D の wall file を生成（試作）
-=========================================================================================
+synrad3d_wall.py — dispog + Duct_Type の断面情報から Synrad3D の wall file を生成
+======================================================================
 
 Bmad/Synrad3D の wall file は Fortran namelist 形式で、縦位置 s ごとに断面を置く
 `&place` と、断面の頂点形状を定義する `&shape_def` から成る:
@@ -910,7 +910,7 @@ def check_library() -> dict:
 def _main(argv=None):
     import argparse
     p = argparse.ArgumentParser(
-        description="dispog + Duct_Type から Synrad3D wall file を生成（試作）")
+        description="dispog + Duct_Type から Synrad3D wall file を生成")
     p.add_argument("dispog", nargs="?", help="dispog ファイル")
     p.add_argument("--ring", choices=["HER", "LER"], default=None)
     p.add_argument("-o", "--out", default=None,
