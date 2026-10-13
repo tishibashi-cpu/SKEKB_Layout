@@ -153,6 +153,98 @@
       "s_center": 2616.981375,
       "length": 0.01,
       "guard": 0.3
+    },
+    {
+      "name": "chicane NRP",
+      "offset": {
+        "points": [
+          {
+            "element": "BP2NRP.1",
+            "ds": -0.755,
+            "dx_mm": 0.0,
+            "_src": "仮: DBW1510uP の外側フランジ。オフセット未確認のため 0。要確認"
+          },
+          {
+            "element": "BP2NRP.1",
+            "ds": 0.755,
+            "dx_mm": 23.7,
+            "_src": "DBW1510uP（BP2NRP.1, 1510 mm）中心側フランジ"
+          },
+          {
+            "element": "BP2NRP.1",
+            "ds": 0.95375,
+            "dx_mm": 30.0,
+            "_src": "DSW2377uP（2377 mm）BP2 側フランジ（図面の値）"
+          },
+          {
+            "element": "BP1NRP.1",
+            "ds": -0.95425,
+            "dx_mm": 104.7,
+            "_src": "DSW2377uP BP1 側フランジ（図面の値）"
+          },
+          {
+            "element": "BP1NRP.1",
+            "ds": -0.7555,
+            "dx_mm": 111.0,
+            "_src": "DBW1511uP（BP1NRP.1, 1511 mm）外側フランジ"
+          },
+          {
+            "element": "BP1NRP.1",
+            "ds": 0.7555,
+            "dx_mm": 134.8,
+            "_src": "DBW1511uP 中心側フランジ"
+          },
+          {
+            "element": "BP1NRP.1",
+            "ds": 0.955,
+            "dx_mm": 134.8,
+            "_src": "DSW1700aP（1700 mm）BP1NRP.1 側フランジ"
+          },
+          {
+            "element": "BP1NRP.2",
+            "ds": -0.955,
+            "dx_mm": 134.8,
+            "_src": "DSW1700aP BP1NRP.2 側フランジ"
+          },
+          {
+            "element": "BP1NRP.2",
+            "ds": -0.7555,
+            "dx_mm": 134.8,
+            "_src": "DBW1511dP（BP1NRP.2, 1511 mm）中心側フランジ"
+          },
+          {
+            "element": "BP1NRP.2",
+            "ds": 0.7555,
+            "dx_mm": 111.0,
+            "_src": "DBW1511dP 外側フランジ"
+          },
+          {
+            "element": "BP1NRP.2",
+            "ds": 0.95425,
+            "dx_mm": 104.7,
+            "_src": "DSW2377dP（2377 mm）BP1 側フランジ（図面の値）"
+          },
+          {
+            "element": "BP2NRP.2",
+            "ds": -0.95375,
+            "dx_mm": 30.0,
+            "_src": "DSW2377dP BP2 側フランジ（図面の値）"
+          },
+          {
+            "element": "BP2NRP.2",
+            "ds": -0.755,
+            "dx_mm": 23.7,
+            "_src": "DBW1510dP（BP2NRP.2, 1510 mm）中心側フランジ"
+          },
+          {
+            "element": "BP2NRP.2",
+            "ds": 0.755,
+            "dx_mm": 0.0,
+            "_src": "仮: DBW1510dP の外側フランジ。オフセット未確認のため 0。要確認"
+          }
+        ]
+      },
+      "_note": "LER シケイン（BP2NRP.1〜BP2NRP.2）。断面形状は変えずにパイプ中心を水平にずらす。dx は基準軌道（シケイン部では直線）から見たフランジ中心の位置。フランジの s は Duct_Table（LER_Duct_Table 247〜253 行）のパイプ長から決めた: 磁石付きパイプ（DBW）は磁石中心に置き、その間のパイプ（DSW）はすき間の中央に置く。このときベローズの実効長は約 199 mm（自然長 200 mm）。閉軌道はここで最大 129.773 mm 外側へバンプする（dispog の OGx）。"
     }
   ],
   "_ridge_fields": {
@@ -165,5 +257,12 @@
     "base_d_start_mm / base_d_end_mm": "ベース管の内径 [mm]。s_start → s_end で線形テーパー。end を省くと一定径",
     "round_mm": "径の丸め [mm]（既定 0.01）",
     "start_with": "base（既定）/ crest。s_start を谷から始めるか山から始めるか"
+  },
+  "_offset_fields": {
+    "offset.points": "パイプ中心の位置を並べた点列。点と点の間はパイプ中心を直線で結ぶ",
+    "s / element + ds": "点の位置。s [m] で直接書くか、要素名と要素中心からの距離 ds [m]（from: entrance / exit も可）",
+    "dx_mm / dy_mm": "基準軌道から見たパイプ中心の位置 [mm]。+x はリング外側",
+    "sign": "dx/dy に掛ける符号（既定 +1）",
+    "_src": "値の出典メモ（ツールは読まない）"
   }
 }

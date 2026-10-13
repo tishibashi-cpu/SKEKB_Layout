@@ -511,11 +511,141 @@ def _ambient_at(sections, s):
     return prev
 
 
-def apply_inserts(sections, inserts, library, auto_cache, placeholders, base_dir):
-    """自動生成の断面列に insert を適用して返す。"""
+# --------------------------------------------------------------------------
+# 断面形状はそのままで、パイプを水平（垂直）方向にずらす区間（シケインなど）
+# --------------------------------------------------------------------------
+#
+# 台帳に "offset" を持つ差し込みを書くと、その区間の断面の r0 をずらす:
+#
+#   { "name": "LER chicane NRP",
+#     "offset": { "points": [
+#         {"element": "BP1NRP.1", "ds": -0.94031, "dx_mm": 111.0},
+#         {"element": "BP1NRP.1", "ds": +0.94031, "dx_mm": 134.8},
+#         {"s": 666.117, "dx_mm": 134.8}, ... ] } }
+#
+# * dx_mm / dy_mm は「基準軌道（reference orbit）から見たパイプ中心」の位置 [mm]。
+#   +x はリング外側（Bmad の局所座標）。
+# * 点の位置は "s" [m] で直接書くか、"element" ＋ "ds"（要素中心から [m]）で書く。
+#   要素基準で書いておけば、ラティスが変わって磁石の s が動いてもパイプが追従する。
+#   "from": "entrance" / "exit" で要素の入口・出口を基準にもできる。
+# * 点と点の間は、パイプ中心を直線で結ぶ。Synrad3D は隣接断面の r0 を s 方向に線形
+#   補間するので、基準軌道が直線の区間では、フランジ間をまっすぐ走る傾いたパイプが
+#   そのまま再現される。
+# * 区間の外ではずらさない。区間の端で dx が 0 でない場合は、その外側にずらさない
+#   断面を置いて段差にする（遠くの断面まで延々と補間されるのを防ぐため）。
+
+
+def _element_table(elements):
+    """dispog の要素 → {名前: (入口 s, 長さ)}。先頭の '-' は外す。"""
+    tab = {}
+    for e in elements or []:
+        name = str(e.name).lstrip("-")
+        tab.setdefault(name, (float(e.s), float(e.length or 0.0)))
+    return tab
+
+
+def _point_s(p, elem):
+    if "s" in p:
+        return float(p["s"])
+    name = p["element"].lstrip("-")
+    if name not in elem:
+        raise KeyError(f"要素 {p['element']} が dispog にありません")
+    s0, L = elem[name]
+    base = {"entrance": s0, "exit": s0 + L}.get(p.get("from", "center"), s0 + L / 2)
+    return base + float(p.get("ds", 0.0))
+
+
+def _shifted_shape(sid, dx_mm, dy_mm, library, auto_cache, warns):
+    """sid を (dx, dy) [mm] だけずらした shape を作って登録し、その名前を返す。"""
+    if abs(dx_mm) < 1e-6 and abs(dy_mm) < 1e-6:
+        return sid
+    base = auto_cache.get(sid) or library.get(sid) or _auto_shape(sid)
+    if base is None:
+        warns.append(f"{sid}: 形状が見つからないためずらせません")
+        return sid
+    if base.get("overlays") or base.get("subchamber"):
+        warns.append(f"{sid}: サブチェンバを伴う断面はずらしていません（未対応）")
+        return sid
+    name = f"{sid}_x{dx_mm:+.2f}" + (f"_y{dy_mm:+.2f}" if abs(dy_mm) >= 1e-6 else "")
+    if name not in auto_cache:
+        sh = {k: v for k, v in base.items() if k not in ("_note", "_source")}
+        r0 = base.get("r0", [0.0, 0.0])
+        sh["r0"] = [round(r0[0] + dx_mm / 1000.0, 9), round(r0[1] + dy_mm / 1000.0, 9)]
+        sh["_offset_of"] = sid
+        auto_cache[name] = sh
+    return name
+
+
+def apply_offsets(sections, entries, library, auto_cache, elem):
+    """offset 差し込みを断面列に適用する。戻り値 (断面列, メモ)。"""
     notes = []
+    for ins in entries:
+        name = ins.get("name", "offset")
+        off = ins["offset"]
+        sign = float(off.get("sign", 1.0))
+        try:
+            pts = sorted((_point_s(p, elem), sign * float(p.get("dx_mm", 0.0)),
+                          sign * float(p.get("dy_mm", 0.0))) for p in off["points"])
+        except (KeyError, ValueError) as e:
+            notes.append(f"{name}: 読み込み失敗 ({e})")
+            continue
+        if len(pts) < 2:
+            notes.append(f"{name}: 点が 2 個未満")
+            continue
+        s_lo, s_hi = pts[0][0], pts[-1][0]
+
+        def at(s):
+            for (s1, x1, y1), (s2, x2, y2) in zip(pts, pts[1:]):
+                if s1 <= s <= s2:
+                    f = 0.0 if s2 == s1 else (s - s1) / (s2 - s1)
+                    return x1 + f * (x2 - x1), y1 + f * (y2 - y1)
+            return None
+
+        def ambient(s):
+            """位置 s に本来ある断面（近いほうの既存断面の形）。"""
+            prev = [r for r in sections if r[0] <= s]
+            nxt = [r for r in sections if r[0] > s]
+            cand = ([(s - prev[-1][0], prev[-1][1])] if prev else []) + \
+                   ([(nxt[0][0] - s, nxt[0][1])] if nxt else [])
+            return min(cand)[1] if cand else None
+
+        warns = []
+        out = []
+        for s, sid, lab in sections:                  # 区間内の既存断面をずらす
+            d = at(s) if s_lo - 1e-9 <= s <= s_hi + 1e-9 else None
+            if d is None:
+                out.append((s, sid, lab))
+            else:
+                out.append((s, _shifted_shape(sid, d[0], d[1], library, auto_cache, warns), lab))
+        added = 0
+        for s, dx, dy in pts:                          # 各点に断面を足す
+            if any(abs(r[0] - s) < 1e-9 for r in sections):
+                continue
+            amb = ambient(s)
+            if amb is None:
+                continue
+            out.append((s, _shifted_shape(amb, dx, dy, library, auto_cache, warns), name))
+            added += 1
+        for s_end, (dx, dy), step in ((s_lo, pts[0][1:], -1e-4), (s_hi, pts[-1][1:], 1e-4)):
+            if abs(dx) >= 1e-6 or abs(dy) >= 1e-6:     # 端で 0 に戻らない → 外側に段差
+                amb = ambient(s_end)
+                if amb:
+                    out.append((s_end + step, amb, f"{name}_edge"))
+                    warns.append(f"s={s_end:.4f} で dx={dx:+.1f} mm のまま区間が終わるので段差にしました")
+        sections = sorted(out, key=lambda r: r[0])
+        notes.append(f"{name}: s={s_lo:.4f}..{s_hi:.4f}、{len(pts)} 点"
+                     f"（dx 最大 {max(abs(p[1]) for p in pts):.1f} mm）")
+        notes += [f"{name}: {w}" for w in dict.fromkeys(warns)]
+    return sections, notes
+
+
+def apply_inserts(sections, inserts, library, auto_cache, placeholders, base_dir,
+                  elements=None):
+    """自動生成の断面列に insert を適用して返す。offset はほかの差し込みの後に適用する。"""
+    notes = []
+    offsets = [i for i in inserts if "offset" in i and not i.get("disabled")]
     for ins in inserts:
-        if ins.get("disabled"):
+        if ins.get("disabled") or "offset" in ins:
             continue
         name = ins.get("name", ins.get("shape", "?"))
         try:
@@ -551,6 +681,10 @@ def apply_inserts(sections, inserts, library, auto_cache, placeholders, base_dir
         sections = sorted(keep + bracket + [(s, sid, lab) for s, sid, _sh, lab in secs],
                           key=lambda r: r[0])
         notes.append(f"{name}: s={s0:.4f}..{s1:.4f} に {len(secs)} 断面")
+    if offsets:
+        sections, more = apply_offsets(sections, offsets, library, auto_cache,
+                                       _element_table(elements))
+        notes += more
     return sections, notes
 
 
@@ -616,7 +750,7 @@ def build_sections(dispog_path: str, ring: str):
     # s 指定の差し込み（IR・コリメータなど）
     inserts = (_load(f"{ring.lower()}_wall_inserts.json", {}) or {}).get("inserts", [])
     sections, insert_notes = apply_inserts(
-        sections, inserts, library, auto_cache, placeholders, _CONFIG)
+        sections, inserts, library, auto_cache, placeholders, _CONFIG, elements)
 
     # s を厳密に増加させる（同値は微小量ずらす）
     eps = 1e-6
